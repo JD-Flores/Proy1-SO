@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package Classes;
 
@@ -8,11 +9,12 @@ import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
- * @author Juan Diego
+ * @author isaac
  */
-public class Worker extends Thread {
+public class Worker extends Thread{
     private float productionPerDay;
     private float salary;
     private float accSalary;
@@ -74,7 +76,12 @@ public class Worker extends Thread {
             try {
                 
                 plant.mutex.acquire();
-                plant.warehouse.updateStorage(this.type, (int) this.productionCounter );
+                if(type.equals("ensamblador")){
+                    plant.warehouse.assembleVehicle(plant.getName());
+                } else {
+                    plant.warehouse.updateStorage(this.type, (int) this.productionCounter );
+                }
+                
                 plant.mutex.release();
                 
                 
@@ -89,4 +96,7 @@ public class Worker extends Thread {
             this.productionCounter = 0;
         } 
     }
+    
+    
+    
 }

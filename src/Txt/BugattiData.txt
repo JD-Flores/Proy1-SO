@@ -1,0 +1,7 @@
+Bugatti:
+Creadores de chasis: 1
+Creadores de carroceria: 1
+Creadores de motores: 1
+Creadores de ruedas: 1
+Creadores de accesorios: 1
+Ensambladores: 1
