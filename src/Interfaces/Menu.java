@@ -5,18 +5,62 @@
  */
 package Interfaces;
 
+import Classes.Functions;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author Windows
  */
-public class Menu extends javax.swing.JPanel {
+public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Menu
-     */
+    private Functions func = new Functions();
+    int chasisB;
+    int carroB;
+    int motorB;
+    int ruedasB;
+    int acceB;
+    int ensamB;
+    int maxB;
+    
+    int chasisM;
+    int carroM;
+    int motorM;
+    int ruedasM;
+    int acceM;
+    int ensamM;
+    int maxM;
+    
+    
     public Menu() {
         initComponents();
+        this.setTitle("Proyecto 1");
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.setResizable(false);
+        
+        this.chasisB = Integer.parseInt(NChasisBugatti.getText());
+        this.carroB = Integer.parseInt(NCarroBugatti.getText());
+        this.motorB = Integer.parseInt(NMotorBugatti.getText());
+        this.ruedasB = Integer.parseInt(NRuedasBugatti.getText());
+        this.acceB = Integer.parseInt(NAcceBugatti.getText());
+        this.ensamB = Integer.parseInt(NEnsamM.getText());
+        this.maxB = Integer.parseInt(NBugatti.getText());
+        
+        this.chasisM = Integer.parseInt(NChasisMaserati.getText());
+        this.carroM = Integer.parseInt(NCarroMaserati.getText());
+        this.motorM = Integer.parseInt(NMotorMaserati.getText());
+        this.ruedasM = Integer.parseInt(NRuedasMaserati.getText());
+        this.acceM = Integer.parseInt(NAcceMaserati.getText());
+        this.ensamM = Integer.parseInt(NEnsamM.getText());
+        this.maxM = Integer.parseInt(NMaserati.getText());
+        
+        
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,19 +71,1231 @@ public class Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        NEnsamM = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        NMaserati = new javax.swing.JLabel();
+        NAcceMaserati = new javax.swing.JLabel();
+        NCarroBugatti = new javax.swing.JLabel();
+        NMotorBugatti = new javax.swing.JLabel();
+        NRuedasBugatti = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        NBugatti = new javax.swing.JLabel();
+        NChasisBugatti = new javax.swing.JLabel();
+        NChasisMaserati = new javax.swing.JLabel();
+        NCarroMaserati = new javax.swing.JLabel();
+        NMotorMaserati = new javax.swing.JLabel();
+        NRuedasMaserati = new javax.swing.JLabel();
+        Start = new javax.swing.JButton();
+        Stop = new javax.swing.JButton();
+        Play = new javax.swing.JButton();
+        BEnsamM = new javax.swing.JButton();
+        BAcceM = new javax.swing.JButton();
+        BChasisB = new javax.swing.JButton();
+        BCarroB = new javax.swing.JButton();
+        SCarroB = new javax.swing.JButton();
+        SMotorB = new javax.swing.JButton();
+        BMotorB = new javax.swing.JButton();
+        SRuedasB = new javax.swing.JButton();
+        BRuedasB = new javax.swing.JButton();
+        SEnsamM = new javax.swing.JButton();
+        SChasisB = new javax.swing.JButton();
+        SChasisM = new javax.swing.JButton();
+        BChasisM = new javax.swing.JButton();
+        SCarroM = new javax.swing.JButton();
+        BCarroM = new javax.swing.JButton();
+        SMotorM = new javax.swing.JButton();
+        BMotorM = new javax.swing.JButton();
+        SRuedasM = new javax.swing.JButton();
+        BRuedasM = new javax.swing.JButton();
+        SAcceM = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        NAcceBugatti = new javax.swing.JLabel();
+        SAcceB = new javax.swing.JButton();
+        BAcceB = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        NEnsamB = new javax.swing.JLabel();
+        SEnsamB = new javax.swing.JButton();
+        BEnsamB = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        Stop2 = new javax.swing.JButton();
+        Play1 = new javax.swing.JButton();
+        jLabel106 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        Stop1 = new javax.swing.JButton();
+        Play2 = new javax.swing.JButton();
+        jLabel108 = new javax.swing.JLabel();
+        jLabel109 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BugattiLogo.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 120));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MaseratiLogo.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, 160));
+
+        jLabel1.setText("Bugatti");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+
+        jLabel2.setText("Maserati");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
+
+        jLabel5.setText("Numero de trabajadores:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 160, -1));
+
+        NEnsamM.setText("1");
+        jPanel1.add(NEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 20, -1));
+
+        jLabel7.setText("Creadores de accesorios:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 150, -1));
+
+        jLabel8.setText("Numero de trabajadores:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 160, -1));
+
+        jLabel9.setText("Creadores de chasis:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 140, -1));
+
+        jLabel10.setText("Creador de carrocería:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 140, -1));
+
+        jLabel11.setText("Creadores de motor: ");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 140, -1));
+
+        jLabel12.setText("Creadores de ruedas:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 140, -1));
+
+        NMaserati.setText("15");
+        jPanel1.add(NMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 20, -1));
+
+        NAcceMaserati.setText("1");
+        jPanel1.add(NAcceMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 20, -1));
+
+        NCarroBugatti.setText("1");
+        jPanel1.add(NCarroBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 20, -1));
+
+        NMotorBugatti.setText("1");
+        jPanel1.add(NMotorBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 20, -1));
+
+        NRuedasBugatti.setText("1");
+        jPanel1.add(NRuedasBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 20, -1));
+
+        jLabel18.setText("Creadores de chasis:");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 140, -1));
+
+        jLabel19.setText("Creador de carrocería:");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 140, -1));
+
+        jLabel20.setText("Creadores de motor: ");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 140, -1));
+
+        jLabel21.setText("Creadores de ruedas:");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 140, -1));
+
+        jLabel22.setText("Ensambladores:");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 120, -1));
+
+        NBugatti.setText("15");
+        jPanel1.add(NBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 20, -1));
+
+        NChasisBugatti.setText("1");
+        jPanel1.add(NChasisBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 20, -1));
+
+        NChasisMaserati.setText("1");
+        jPanel1.add(NChasisMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 20, -1));
+
+        NCarroMaserati.setText("1");
+        jPanel1.add(NCarroMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 20, -1));
+
+        NMotorMaserati.setText("1");
+        jPanel1.add(NMotorMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 20, -1));
+
+        NRuedasMaserati.setText("1");
+        jPanel1.add(NRuedasMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 330, 20, -1));
+
+        Start.setText("Comenzar Simulación");
+        Start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 170, 50));
+
+        Stop.setText("Parar");
+        Stop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StopActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, 90, -1));
+
+        Play.setText("Reanudar");
+        Play.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlayActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, 90, -1));
+
+        BEnsamM.setText("jButton1");
+        BEnsamM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BEnsamMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 400, 30, 10));
+
+        BAcceM.setText("jButton1");
+        BAcceM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BAcceMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BAcceM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 30, 10));
+
+        BChasisB.setText("jButton1");
+        BChasisB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BChasisBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 30, 10));
+
+        BCarroB.setText("jButton1");
+        BCarroB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BCarroBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 30, 10));
+
+        SCarroB.setText("jButton1");
+        SCarroB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SCarroBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 30, 10));
+
+        SMotorB.setText("jButton1");
+        SMotorB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SMotorBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 30, 10));
+
+        BMotorB.setText("jButton1");
+        BMotorB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BMotorBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 30, 10));
+
+        SRuedasB.setText("jButton1");
+        SRuedasB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SRuedasBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 30, 10));
+
+        BRuedasB.setText("jButton1");
+        BRuedasB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BRuedasBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 30, 10));
+
+        SEnsamM.setText("jButton1");
+        SEnsamM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SEnsamMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, 30, 10));
+
+        SChasisB.setText("jButton1");
+        SChasisB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SChasisBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 30, 10));
+
+        SChasisM.setText("jButton1");
+        SChasisM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SChasisMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SChasisM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 30, 10));
+
+        BChasisM.setText("jButton1");
+        BChasisM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BChasisMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BChasisM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 30, 10));
+
+        SCarroM.setText("jButton1");
+        SCarroM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SCarroMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SCarroM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 30, 10));
+
+        BCarroM.setText("jButton1");
+        BCarroM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BCarroMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BCarroM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, 30, 10));
+
+        SMotorM.setText("jButton1");
+        SMotorM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SMotorMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SMotorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, 30, 10));
+
+        BMotorM.setText("jButton1");
+        BMotorM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BMotorMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BMotorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 310, 30, 10));
+
+        SRuedasM.setText("jButton1");
+        SRuedasM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SRuedasMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SRuedasM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 30, 10));
+
+        BRuedasM.setText("jButton1");
+        BRuedasM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BRuedasMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BRuedasM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 30, 10));
+
+        SAcceM.setText("jButton1");
+        SAcceM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SAcceMActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SAcceM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 360, 30, 10));
+
+        jLabel23.setText("Creadores de accesorios:");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 140, -1));
+
+        NAcceBugatti.setText("1");
+        jPanel1.add(NAcceBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 20, -1));
+
+        SAcceB.setText("jButton1");
+        SAcceB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SAcceBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 30, 10));
+
+        BAcceB.setText("jButton1");
+        BAcceB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BAcceBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 30, 10));
+
+        jLabel24.setText("Ensambladores:");
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 120, -1));
+
+        NEnsamB.setText("1");
+        jPanel1.add(NEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 20, -1));
+
+        SEnsamB.setText("jButton1");
+        SEnsamB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SEnsamBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 30, 10));
+
+        BEnsamB.setText("jButton1");
+        BEnsamB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BEnsamBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 30, 10));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 80, 20));
+
+        jLabel28.setText("Duración del día (en ms):");
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 150, -1));
+
+        jTabbedPane1.addTab("Configuración", jPanel1);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BugattiLogo.png"))); // NOI18N
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 120));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MaseratiLogo.png"))); // NOI18N
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, 160));
+
+        jLabel14.setText("Almacén");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, -1));
+
+        jLabel15.setText("Accesorios:");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 80, -1));
+
+        jLabel16.setText("Max:");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 40, -1));
+
+        jLabel17.setText("Carrocería:");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 70, -1));
+
+        jLabel25.setText("Motor:");
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 80, -1));
+
+        jLabel26.setText("Ruedas:");
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 80, -1));
+
+        jLabel27.setText("0");
+        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 20, -1));
+
+        jLabel29.setText("0");
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 20, -1));
+
+        jLabel30.setText("0");
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 20, -1));
+
+        jLabel31.setText("0");
+        jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 20, -1));
+
+        jLabel32.setText("Chasis:");
+        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 60, -1));
+
+        jLabel33.setText("Max:");
+        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 40, -1));
+
+        jLabel34.setText("Max:");
+        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 40, -1));
+
+        jLabel35.setText("Max:");
+        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 40, -1));
+
+        jLabel36.setText("Max:");
+        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 40, -1));
+
+        jLabel37.setText("0");
+        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 20, -1));
+
+        jLabel38.setText("0");
+        jPanel2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 20, -1));
+
+        jLabel39.setText("0");
+        jPanel2.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 20, -1));
+
+        jLabel40.setText("0");
+        jPanel2.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 20, -1));
+
+        jLabel41.setText("0");
+        jPanel2.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 20, -1));
+
+        jLabel42.setText("0");
+        jPanel2.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, 20, -1));
+
+        jLabel43.setText("Director de la planta:");
+        jPanel2.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, -1, -1));
+
+        jLabel44.setText("Utilidad total:");
+        jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, -1, -1));
+
+        jLabel45.setText("0");
+        jPanel2.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 20, -1));
+
+        jLabel46.setText("0");
+        jPanel2.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 20, -1));
+
+        jLabel47.setText("Vehículo con accesorios:");
+        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
+
+        jLabel48.setText("0");
+        jPanel2.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 20, -1));
+
+        jLabel49.setText("Días para la entrega:");
+        jPanel2.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, -1));
+
+        jLabel50.setText("Dinero descontado: ");
+        jPanel2.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, -1, -1));
+
+        jLabel51.setText("Algo");
+        jPanel2.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
+
+        jLabel52.setText("Algo");
+        jPanel2.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
+
+        jLabel53.setText("Gerente de operaciones:");
+        jPanel2.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, -1, -1));
+
+        jLabel54.setText("Faltas:");
+        jPanel2.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, -1, -1));
+
+        jLabel55.setText("0");
+        jPanel2.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 20, -1));
+
+        jLabel56.setText("0");
+        jPanel2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 20, -1));
+
+        jLabel57.setText("Vehículo estándar:");
+        jPanel2.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
+
+        jLabel58.setText("0");
+        jPanel2.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 20, -1));
+
+        jLabel59.setText("Ganancia en Bruto:");
+        jPanel2.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, -1, -1));
+
+        jLabel60.setText("0");
+        jPanel2.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 20, -1));
+
+        jLabel61.setText("Costro operativo:");
+        jPanel2.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, -1, -1));
+
+        jLabel62.setText("0");
+        jPanel2.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 20, -1));
+
+        jLabel63.setText("Almacén");
+        jPanel2.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+
+        jLabel64.setText("Chasis:");
+        jPanel2.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 80, -1));
+
+        jLabel65.setText("0");
+        jPanel2.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 20, -1));
+
+        jLabel66.setText("Carrocería:");
+        jPanel2.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 80, -1));
+
+        jLabel67.setText("Motor:");
+        jPanel2.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 80, -1));
+
+        jLabel68.setText("Ruedas:");
+        jPanel2.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 80, -1));
+
+        jLabel70.setText("Accesorios:");
+        jPanel2.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 80, -1));
+
+        jLabel69.setText("0");
+        jPanel2.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 20, -1));
+
+        jLabel71.setText("0");
+        jPanel2.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 20, -1));
+
+        jLabel72.setText("0");
+        jPanel2.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 20, -1));
+
+        jLabel73.setText("0");
+        jPanel2.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 20, -1));
+
+        jLabel74.setText("Max:");
+        jPanel2.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 40, -1));
+
+        jLabel75.setText("Max:");
+        jPanel2.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, 40, -1));
+
+        jLabel76.setText("Max:");
+        jPanel2.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, 40, -1));
+
+        jLabel77.setText("Max:");
+        jPanel2.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 40, -1));
+
+        jLabel78.setText("Max:");
+        jPanel2.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 40, -1));
+
+        jLabel79.setText("0");
+        jPanel2.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 20, -1));
+
+        jLabel80.setText("0");
+        jPanel2.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 20, -1));
+
+        jLabel81.setText("0");
+        jPanel2.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 20, -1));
+
+        jLabel82.setText("0");
+        jPanel2.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 20, -1));
+
+        jLabel83.setText("0");
+        jPanel2.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 20, -1));
+
+        jLabel84.setText("Vehículo estándar:");
+        jPanel2.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+
+        jLabel85.setText("Vehículo con accesorios:");
+        jPanel2.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+
+        jLabel86.setText("Días para la entrega:");
+        jPanel2.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+
+        jLabel87.setText("0");
+        jPanel2.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 20, -1));
+
+        jLabel88.setText("0");
+        jPanel2.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 20, -1));
+
+        jLabel89.setText("0");
+        jPanel2.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 20, -1));
+
+        jLabel90.setText("Gerente de operaciones:");
+        jPanel2.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+
+        jLabel91.setText("Faltas:");
+        jPanel2.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+
+        jLabel92.setText("Dinero descontado: ");
+        jPanel2.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+
+        jLabel93.setText("Director de la planta:");
+        jPanel2.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+
+        jLabel94.setText("Algo");
+        jPanel2.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
+
+        jLabel95.setText("0");
+        jPanel2.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 20, -1));
+
+        jLabel96.setText("0");
+        jPanel2.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 20, -1));
+
+        jLabel97.setText("Algo");
+        jPanel2.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
+
+        jLabel98.setText("Ganancia en Bruto:");
+        jPanel2.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
+
+        jLabel99.setText("0");
+        jPanel2.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 20, -1));
+
+        jLabel100.setText("Costro operativo:");
+        jPanel2.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
+
+        jLabel101.setText("0");
+        jPanel2.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 20, -1));
+
+        jLabel102.setText("Utilidad total:");
+        jPanel2.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, -1));
+
+        jLabel103.setText("0");
+        jPanel2.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 20, -1));
+
+        Stop2.setText("Parar");
+        Stop2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Stop2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Stop2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 90, -1));
+
+        Play1.setText("Reanudar");
+        Play1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Play1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Play1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
+
+        jLabel106.setText("Bugatti");
+        jPanel2.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+
+        jLabel107.setText("Maserati");
+        jPanel2.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
+
+        jTabbedPane1.addTab("Simulación", jPanel2);
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel104.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BugattiLogo.png"))); // NOI18N
+        jPanel3.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 120));
+
+        jLabel105.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MaseratiLogo.png"))); // NOI18N
+        jPanel3.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, 160));
+
+        Stop1.setText("Parar");
+        Stop1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Stop1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Stop1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 90, -1));
+
+        Play2.setText("Reanudar");
+        Play2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Play2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Play2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
+
+        jLabel108.setText("Bugatti");
+        jPanel3.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+
+        jLabel109.setText("Maserati");
+        jPanel3.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
+
+        jTabbedPane1.addTab("    Gráficos   ", jPanel3);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 823, 537));
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StartActionPerformed
+
+    private void StopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StopActionPerformed
+
+    private void SChasisBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SChasisBActionPerformed
+        
+        if(func.checkWorkers(chasisB, carroB, motorB, ruedasB, acceB, maxB, ensamB)) {
+            chasisB += 1;
+            NChasisBugatti.setText(Integer.toString(chasisB));
+        }
+        
+    }//GEN-LAST:event_SChasisBActionPerformed
+
+    private void SCarroBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SCarroBActionPerformed
+
+        if(func.checkWorkers(chasisB, carroB, motorB, ruedasB, acceB, maxB, ensamB)) {
+            carroB += 1;
+            NCarroBugatti.setText(Integer.toString(carroB));
+        }
+    }//GEN-LAST:event_SCarroBActionPerformed
+
+    private void SMotorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SMotorBActionPerformed
+        if(func.checkWorkers(chasisB, carroB, motorB, ruedasB, acceB, maxB, ensamB)) {
+            motorB += 1;
+            NMotorBugatti.setText(Integer.toString(carroB));
+        }
+    }//GEN-LAST:event_SMotorBActionPerformed
+
+    private void SRuedasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SRuedasBActionPerformed
+        if(func.checkWorkers(chasisB, carroB, motorB, ruedasB, acceB, maxB, ensamB)) {
+            ruedasB += 1;
+            NRuedasBugatti.setText(Integer.toString(ruedasB));
+        }
+    }//GEN-LAST:event_SRuedasBActionPerformed
+
+    private void SEnsamMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SEnsamMActionPerformed
+        if(func.checkWorkers(chasisM, carroM, motorM, ruedasM, acceM, maxM, ensamM)) {
+            ensamM += 1;
+            NEnsamM.setText(Integer.toString(ensamM));
+        }
+    }//GEN-LAST:event_SEnsamMActionPerformed
+
+    private void SChasisMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SChasisMActionPerformed
+        if(func.checkWorkers(chasisM, carroM, motorM, ruedasM, acceM, maxM, ensamM)) {
+            chasisM += 1;
+            NChasisMaserati.setText(Integer.toString(chasisM));
+        }
+    }//GEN-LAST:event_SChasisMActionPerformed
+
+    private void SCarroMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SCarroMActionPerformed
+        if(func.checkWorkers(chasisM, carroM, motorM, ruedasM, acceM, maxM, ensamM)) {
+            carroM += 1;
+            NCarroMaserati.setText(Integer.toString(carroM));
+        }
+    }//GEN-LAST:event_SCarroMActionPerformed
+
+    private void SMotorMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SMotorMActionPerformed
+        if(func.checkWorkers(chasisM, carroM, motorM, ruedasM, acceM, maxM, ensamM)) {
+            motorM += 1;
+            NMotorMaserati.setText(Integer.toString(motorM));
+        }
+    }//GEN-LAST:event_SMotorMActionPerformed
+
+    private void SRuedasMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SRuedasMActionPerformed
+        if(func.checkWorkers(chasisM, carroM, motorM, ruedasM, acceM, maxM, ensamM)) {
+            ruedasM += 1;
+            NRuedasMaserati.setText(Integer.toString(ruedasM));
+        }
+    }//GEN-LAST:event_SRuedasMActionPerformed
+
+    private void SAcceMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAcceMActionPerformed
+        if(func.checkWorkers(chasisM, carroM, motorM, ruedasM, acceM, maxM, ensamM)) {
+            acceM += 1;
+            NAcceMaserati.setText(Integer.toString(acceM));
+        }
+    }//GEN-LAST:event_SAcceMActionPerformed
+
+    private void BChasisBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BChasisBActionPerformed
+        if (chasisB == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            chasisB -= 1;
+            NChasisBugatti.setText(Integer.toString(chasisB));
+        }
+    }//GEN-LAST:event_BChasisBActionPerformed
+
+    private void BCarroBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCarroBActionPerformed
+        if (carroB == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            carroB -= 1;
+            NCarroBugatti.setText(Integer.toString(carroB));
+        }
+    }//GEN-LAST:event_BCarroBActionPerformed
+
+    private void BMotorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BMotorBActionPerformed
+        if (motorB == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            motorB -= 1;
+            NMotorBugatti.setText(Integer.toString(motorB));
+        }
+    }//GEN-LAST:event_BMotorBActionPerformed
+
+    private void BRuedasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BRuedasBActionPerformed
+        if (ruedasB == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            ruedasB -= 1;
+            NRuedasBugatti.setText(Integer.toString(ruedasB));
+        }
+    }//GEN-LAST:event_BRuedasBActionPerformed
+
+    private void BEnsamMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BEnsamMActionPerformed
+        if (ensamM == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            ensamM -= 1;
+            NEnsamM.setText(Integer.toString(ensamM));
+        }
+    }//GEN-LAST:event_BEnsamMActionPerformed
+
+    private void BChasisMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BChasisMActionPerformed
+        if (chasisM == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            chasisM -= 1;
+            NChasisMaserati.setText(Integer.toString(chasisM));
+        }
+    }//GEN-LAST:event_BChasisMActionPerformed
+
+    private void BCarroMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCarroMActionPerformed
+        if (carroM == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            carroM -= 1;
+            NCarroMaserati.setText(Integer.toString(carroM));
+        }
+    }//GEN-LAST:event_BCarroMActionPerformed
+
+    private void BMotorMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BMotorMActionPerformed
+        if (motorM == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            motorM -= 1;
+            NMotorMaserati.setText(Integer.toString(motorM));
+        }
+    }//GEN-LAST:event_BMotorMActionPerformed
+
+    private void BRuedasMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BRuedasMActionPerformed
+        if (ruedasM == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            ruedasM -= 1;
+            NRuedasMaserati.setText(Integer.toString(ruedasM));
+        }
+    }//GEN-LAST:event_BRuedasMActionPerformed
+
+    private void BAcceMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAcceMActionPerformed
+        if (acceM == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            acceM -= 1;
+            NAcceMaserati.setText(Integer.toString(acceM));
+        }
+    }//GEN-LAST:event_BAcceMActionPerformed
+
+    private void SAcceBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAcceBActionPerformed
+        if(func.checkWorkers(chasisB, carroB, motorB, ruedasB, acceB, maxB, ensamB)) {
+            acceB += 1;
+            NAcceBugatti.setText(Integer.toString(acceB));
+        }
+    }//GEN-LAST:event_SAcceBActionPerformed
+
+    private void BAcceBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAcceBActionPerformed
+        if (acceB == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            acceB -= 1;
+            NAcceBugatti.setText(Integer.toString(acceB));
+        }
+    }//GEN-LAST:event_BAcceBActionPerformed
+
+    private void SEnsamBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SEnsamBActionPerformed
+        if(func.checkWorkers(chasisB, carroB, motorB, ruedasB, acceB, maxB, ensamB)) {
+            ensamB += 1;
+            NEnsamB.setText(Integer.toString(ensamB));
+        }
+    }//GEN-LAST:event_SEnsamBActionPerformed
+
+    private void BEnsamBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BEnsamBActionPerformed
+        if (ensamB == 1) {
+            JOptionPane.showMessageDialog(null, "no puede haber menos de 1 trabajador por área");
+        } else {
+            ensamB -= 1;
+            NEnsamB.setText(Integer.toString(ensamB));
+        }
+    }//GEN-LAST:event_BEnsamBActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void Stop1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stop1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Stop1ActionPerformed
+
+    private void Stop2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stop2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Stop2ActionPerformed
+
+    private void Play1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Play1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Play1ActionPerformed
+
+    private void Play2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Play2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Play2ActionPerformed
+
+    private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PlayActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Menu().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BAcceB;
+    private javax.swing.JButton BAcceM;
+    private javax.swing.JButton BCarroB;
+    private javax.swing.JButton BCarroM;
+    private javax.swing.JButton BChasisB;
+    private javax.swing.JButton BChasisM;
+    private javax.swing.JButton BEnsamB;
+    private javax.swing.JButton BEnsamM;
+    private javax.swing.JButton BMotorB;
+    private javax.swing.JButton BMotorM;
+    private javax.swing.JButton BRuedasB;
+    private javax.swing.JButton BRuedasM;
+    private javax.swing.JLabel NAcceBugatti;
+    private javax.swing.JLabel NAcceMaserati;
+    private javax.swing.JLabel NBugatti;
+    private javax.swing.JLabel NCarroBugatti;
+    private javax.swing.JLabel NCarroMaserati;
+    private javax.swing.JLabel NChasisBugatti;
+    private javax.swing.JLabel NChasisMaserati;
+    private javax.swing.JLabel NEnsamB;
+    private javax.swing.JLabel NEnsamM;
+    private javax.swing.JLabel NMaserati;
+    private javax.swing.JLabel NMotorBugatti;
+    private javax.swing.JLabel NMotorMaserati;
+    private javax.swing.JLabel NRuedasBugatti;
+    private javax.swing.JLabel NRuedasMaserati;
+    private javax.swing.JButton Play;
+    private javax.swing.JButton Play1;
+    private javax.swing.JButton Play2;
+    private javax.swing.JButton SAcceB;
+    private javax.swing.JButton SAcceM;
+    private javax.swing.JButton SCarroB;
+    private javax.swing.JButton SCarroM;
+    private javax.swing.JButton SChasisB;
+    private javax.swing.JButton SChasisM;
+    private javax.swing.JButton SEnsamB;
+    private javax.swing.JButton SEnsamM;
+    private javax.swing.JButton SMotorB;
+    private javax.swing.JButton SMotorM;
+    private javax.swing.JButton SRuedasB;
+    private javax.swing.JButton SRuedasM;
+    private javax.swing.JButton Start;
+    private javax.swing.JButton Stop;
+    private javax.swing.JButton Stop1;
+    private javax.swing.JButton Stop2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
