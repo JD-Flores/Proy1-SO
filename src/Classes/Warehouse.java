@@ -12,6 +12,7 @@ public class Warehouse {
     public int maxCarroQty;
     public int maxMotorQty;
     public int maxAccesQty;
+    private int standardCounter = 0;
     
     public int standardVehicle;
     public int specialVehicle;
@@ -20,7 +21,7 @@ public class Warehouse {
         this.maxChasisQty = maxChasis;
         this.maxWheelsQty = maxWheels;
         this.maxCarroQty = maxCarro;
-        this.motorQty = maxMotor;
+        this.maxMotorQty = maxMotor;
         this.maxAccesQty = maxAcces;
         
         
@@ -90,25 +91,26 @@ public class Warehouse {
     
     public void assembleVehicle(String plantName){
         if (plantName.equals("Bugatti")){
-            
-            if (Math.floorMod(standardVehicle, 5) == 0) {
+            if (standardCounter == 5){
                 if (checkSpecialMats()) {
-                    carroQty -= 2;
-                    chasisQty -= 1;
-                    motorQty -= 4;
-                    wheelsQty -= 4;
-                    accesQty -=2;
-                    specialVehicle += 1;
-                    System.out.println("Vehiculo especial: " + specialVehicle);
+                    this.carroQty -= 2;
+                    this.chasisQty -= 1;
+                    this.motorQty -= 4;
+                    this.wheelsQty -= 4;
+                    this.accesQty -=2;
+                    this.specialVehicle += 1;
+                    this.standardCounter = 0;
+                    System.out.println("Vehiculo especial: " + this.specialVehicle);
                 } 
             } else {
                 if (checkStandardMats()) {
-                    carroQty -= 2;
-                    chasisQty -= 1;
-                    motorQty -= 4;
-                    wheelsQty -= 4;
-                    standardVehicle += 1;
-                    System.out.println("Vehiculo estandar: " + standardVehicle);
+                    this.carroQty -= 2;
+                    this.chasisQty -= 1;
+                    this.motorQty -= 4;
+                    this.wheelsQty -= 4;
+                    this.standardVehicle += 1;
+                    this.standardCounter +=1;
+                    System.out.println("Vehiculo estandar: " + this.standardVehicle);
                 }
             }
             
@@ -123,21 +125,14 @@ public class Warehouse {
         
         // chequea lo necesario para un vehiculo marca bugatti
         
-        if (carroQty >= 2 && chasisQty >= 1 && motorQty >= 4 && wheelsQty >= 4 && accesQty >= 2) {
-           return true;
-        }
-        return false;
+       return ((this.carroQty >= 2) && (this.chasisQty >= 1 )&& (this.motorQty >= 4) && (this.wheelsQty >= 4) && (this.accesQty >= 2));
     }
     
     
     public boolean checkStandardMats() {
         
         // chequea lo necesario para un vehiculo marca bugatti
-        
-        if (carroQty >= 2 && chasisQty >= 1 && motorQty >= 4 && wheelsQty >= 4) {
-           return true;
-        }
-        return false;
+        return ((this.carroQty >= 2) && (this.chasisQty >= 1) && (this.motorQty >= 4) && (this.wheelsQty >= 4));
     }
     
  }
