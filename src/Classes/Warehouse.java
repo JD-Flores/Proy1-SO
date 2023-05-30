@@ -12,18 +12,19 @@ public class Warehouse {
     public int maxCarroQty;
     public int maxMotorQty;
     public int maxAccesQty;
+    private int[] needsArray;
     private int standardCounter = 0;
     
     public int standardVehicle;
     public int specialVehicle;
     
-    public Warehouse(int maxChasis, int maxWheels, int maxCarro, int maxMotor, int maxAcces){
+    public Warehouse(int maxChasis, int maxWheels, int maxCarro, int maxMotor, int maxAcces, int[] needsArray){
         this.maxChasisQty = maxChasis;
         this.maxWheelsQty = maxWheels;
         this.maxCarroQty = maxCarro;
         this.maxMotorQty = maxMotor;
         this.maxAccesQty = maxAcces;
-        
+        this.needsArray = needsArray;
         
         this.chasisQty = 0;
         this.wheelsQty = 0;
@@ -90,34 +91,27 @@ public class Warehouse {
     }
     
     public void assembleVehicle(String plantName){
-        if (plantName.equals("Bugatti")){
-            if (standardCounter == 5){
-                if (checkSpecialMats()) {
-                    this.carroQty -= 2;
-                    this.chasisQty -= 1;
-                    this.motorQty -= 4;
-                    this.wheelsQty -= 4;
-                    this.accesQty -=2;
-                    this.specialVehicle += 1;
-                    this.standardCounter = 0;
-                    System.out.println("Vehiculo especial: " + this.specialVehicle);
-                } 
-            } else {
-                if (checkStandardMats()) {
-                    this.carroQty -= 2;
-                    this.chasisQty -= 1;
-                    this.motorQty -= 4;
-                    this.wheelsQty -= 4;
-                    this.standardVehicle += 1;
-                    this.standardCounter +=1;
-                    System.out.println("Vehiculo estandar: " + this.standardVehicle);
-                }
-            }
-            
+        if (standardCounter == 5){
+            if (checkSpecialMats()) {
+                this.carroQty -= needsArray[0];
+                this.chasisQty -= needsArray[1];
+                this.motorQty -= needsArray[2];
+                this.wheelsQty -= needsArray[3];
+                this.accesQty -= needsArray[4];
+                this.specialVehicle += 1;
+                this.standardCounter = 0;
+                System.out.println("Vehiculo especial: " + this.specialVehicle);
+            } 
         } else {
-            
-            //Quita si puede las partes correspondientes a un vehiculo de maserati
-            
+            if (checkStandardMats()) {
+                this.carroQty -= needsArray[0];
+                this.chasisQty -= needsArray[1];
+                this.motorQty -= needsArray[2];
+                this.wheelsQty -= needsArray[3];
+                this.standardVehicle += 1;
+                this.standardCounter +=1;
+                System.out.println("Vehiculo estandar: " + this.standardVehicle);
+            }
         }
     }
     
@@ -125,14 +119,14 @@ public class Warehouse {
         
         // chequea lo necesario para un vehiculo marca bugatti
         
-       return ((this.carroQty >= 2) && (this.chasisQty >= 1 )&& (this.motorQty >= 4) && (this.wheelsQty >= 4) && (this.accesQty >= 2));
+       return ((this.carroQty >= needsArray[0]) && (this.chasisQty >= needsArray[1] )&& (this.motorQty >= needsArray[2]) && (this.wheelsQty >= needsArray[3]) && (this.accesQty >= needsArray[4]));
     }
     
     
     public boolean checkStandardMats() {
         
         // chequea lo necesario para un vehiculo marca bugatti
-        return ((this.carroQty >= 2) && (this.chasisQty >= 1) && (this.motorQty >= 4) && (this.wheelsQty >= 4));
+        return ((this.carroQty >= needsArray[0]) && (this.chasisQty >= needsArray[1]) && (this.motorQty >= needsArray[2]) && (this.wheelsQty >= needsArray[3]));
     }
     
  }

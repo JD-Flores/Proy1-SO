@@ -31,12 +31,12 @@ public class VehiclePlant {
     private String type;
     
     
-    public VehiclePlant (String name, int maxWorkers, long dayDuration, int[] workerArray, float[] productionArray) {
+    public VehiclePlant (String name, int maxWorkers, long dayDuration, int[] workerArray, float[] productionArray, int[] needsArray) {
         this.name = name;
         this.maxWorkerQty = maxWorkers;
         this.dayDurationInMs = dayDuration;
         this.workers = new Worker[maxWorkerQty];
-        this.warehouse = new Warehouse(25, 35, 20, 55, 10);
+        this.warehouse = new Warehouse(25, 35, 20, 55, 10, needsArray);
         this.mutex = new Semaphore(1);
         this.workerArray = workerArray;
         this.productionArray = productionArray;
@@ -106,6 +106,7 @@ public class VehiclePlant {
         Worker director = new Worker ((float) 1, 30, dayDurationInMs, "director", this);
         director.start();
         this.director = director;*/
+        
         for (int i = 0; i<6; i++){
             for (int j = 0; j<workerArray[i]; j++) {
                 //switch i with cases 0-5

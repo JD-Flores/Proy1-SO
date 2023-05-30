@@ -19,12 +19,22 @@ import javax.swing.JOptionPane;
 public class Menu extends javax.swing.JFrame {
 
     private Functions func = new Functions();
+    
     String BugattiData = func.readBugattiData();
     int[] BugattiArray = func.transformBugattiData(BugattiData);
-   
+    //León Serpa - Bugatti - Ult. num. carnet: 5
     float[] BugattiProductionArray = {(float)0.34, (float)0.34, 2, 5, (float)0.5, (float)0.5};
+    int[] BugattiAssemblyNeeds = {2,1,4,4,2};
                 
-    VehiclePlant BuVehiclePlant = new VehiclePlant("Bugatti", 15, 1000, BugattiArray, BugattiProductionArray);
+    VehiclePlant BuVehiclePlant = new VehiclePlant("Bugatti", 15, 500, BugattiArray, BugattiProductionArray, BugattiAssemblyNeeds);
+    
+    String MaseratiData = func.readMaseratiData();
+    int[] MaseratiArray = func.transformMaseratiData(MaseratiData);
+    //Juan Flores - Maserati - Ult. num. carnet: 7
+    float[] MaseratiProductionArray = {(float)0.25, (float)0.25, 1, 5, (float)0.5, (float)0.5};
+    int[] MaseratiAssemblyNeeds = {1,1,2,4,3};
+    
+    VehiclePlant MaVehiclePlant = new VehiclePlant("Maserati", 17, 500, MaseratiArray, MaseratiProductionArray, MaseratiAssemblyNeeds);
     
     int chasisB;
     int carroB;
