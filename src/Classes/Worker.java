@@ -6,6 +6,7 @@
 package Classes;
 
 import static java.lang.Thread.sleep;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -37,35 +38,116 @@ public class Worker extends Thread{
     @Override
     public void run() {
         try {
-            sleep(1000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-        
-        while(true) {
-             try {
-                 
-             payCheck();
-             produceForTheDay();
-                 
-                 
             sleep(this.dayDurationInMs);
-            
-            
-            
-            
         } catch (InterruptedException ex) {
             Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        if (this.type.equals("manager")) {
+            
+            while (true) {
+                int count = 0;
+                while (count < 32) {
+                    
+                    try {
+                        sleep( (int) this.dayDurationInMs / 48);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if(plant.isManagerWorking) {
+                        plant.isManagerWorking = false;
+                    } else {
+                        plant.isManagerWorking = true;
+                    }
+                    count++;
+                }
+                try {
+                    sleep(this.dayDurationInMs/3);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                payCheck();
+                if(plant.dayCount>0){
+                    plant.dayCount--;
+                } 
+               
+                System.out.println("manager cobró y faltan "+plant.dayCount+" para la entrega");
+                
+            }
+            
+            
+        } else if (this.type.equals("director")){
+            
+            while(true) {
+                if(plant.dayCount == 0) {
+                    try {
+                        sellVehicles();
+                        sleep(this.dayDurationInMs);
+                       
+                        plant.dayCount = 10;
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    Random random = new Random();
+                    int randomTime = random.nextInt((int) this.dayDurationInMs);
+                    try {
+                        sleep(randomTime);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if(plant.isManagerWorking) {
+                        punishManager();
+                        System.out.println("se ha penalizado al manager");
+                        try {
+                            sleep((this.dayDurationInMs*2*25)/30);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } else {
+                        try {
+                            sleep((this.dayDurationInMs*2*25)/30);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        if (plant.isManagerWorking) {
+                            punishManager();
+                            System.out.println("se ha penalizado al manager");
+                        }
+                    }
+                    try {
+                        sleep(this.dayDurationInMs-randomTime);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                payCheck();
+                System.out.println("Director cobró");
+            }
+            
+        } else {
+            while(true) {
+                
+                try {
+
+                    payCheck();
+                    produceForTheDay();
+                    sleep(this.dayDurationInMs);
+            
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
+        
+
         
        
     }
     
     public void payCheck() {
-        this.accSalary += this.salary;
+        this.accSalary += 24*this.salary;
+        plant.costos += 24*this.salary;
     }
     
     public void produceForTheDay(){
@@ -97,6 +179,20 @@ public class Worker extends Thread{
         } 
     }
     
+    public void punishManager() {
+        plant.manager.accSalary -= 50;
+        plant.faltasManager ++;
+    }
     
+    public void sellVehicles(){
+        if (plant.getName().equals("Bugatti")){
+            plant.ganancias += plant.warehouse.standardVehicle*550000;
+            plant.warehouse.standardVehicle = 0;
+            plant.ganancias += plant.warehouse.specialVehicle*600000;
+            plant.warehouse.standardVehicle = 0;
+        } else {
+            
+        }
+    }
     
 }
