@@ -47,7 +47,7 @@ public class Worker extends Thread{
             
             while (true) {
                 int count = 0;
-                while (count < 16) {
+                while (count < 32) {
                     
                     try {
                         sleep( (int) this.dayDurationInMs / 48);
