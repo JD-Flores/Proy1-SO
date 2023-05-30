@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Classes.Functions;
+import Classes.VehiclePlant;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -18,6 +19,13 @@ import javax.swing.JOptionPane;
 public class Menu extends javax.swing.JFrame {
 
     private Functions func = new Functions();
+    String BugattiData = func.readBugattiData();
+    int[] BugattiArray = func.transformBugattiData(BugattiData);
+   
+    float[] BugattiProductionArray = {(float)0.34, (float)0.34, 2, 5, (float)0.5, (float)0.5};
+                
+    VehiclePlant BuVehiclePlant = new VehiclePlant("Bugatti", 15, 1000, BugattiArray, BugattiProductionArray);
+    
     int chasisB;
     int carroB;
     int motorB;

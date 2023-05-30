@@ -10,13 +10,7 @@ public class Main {
         
         Functions func = new Functions();
         String BugattiData = func.readBugattiData();
-        JOptionPane.showMessageDialog(null, BugattiData);
-        
-        int[] BugattiArray = func.transformBugattiData(BugattiData);
-
-        
-        
-        VehiclePlant BuVehiclePlant = new VehiclePlant("Bugatti", 15, 1000, BugattiArray);
+        JOptionPane.showMessageDialog(null, BugattiData); 
         
         Menu menu = new Menu();
 

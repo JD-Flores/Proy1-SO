@@ -17,6 +17,7 @@ public class VehiclePlant {
     private Worker[] workers;
     private long dayDurationInMs;
     private int[] workerArray;
+    private float[] productionArray;
     public Warehouse warehouse;
     public Semaphore mutex;
     public int dayCount;
@@ -26,9 +27,11 @@ public class VehiclePlant {
     public int faltasManager;
     public int costos;
     public int ganancias;
+    private int salary;
+    private String type;
     
     
-    public VehiclePlant (String name, int maxWorkers, long dayDuration, int[] workerArray) {
+    public VehiclePlant (String name, int maxWorkers, long dayDuration, int[] workerArray, float[] productionArray) {
         this.name = name;
         this.maxWorkerQty = maxWorkers;
         this.dayDurationInMs = dayDuration;
@@ -36,6 +39,7 @@ public class VehiclePlant {
         this.warehouse = new Warehouse(25, 35, 20, 55, 10);
         this.mutex = new Semaphore(1);
         this.workerArray = workerArray;
+        this.productionArray = productionArray;
         this.isManagerWorking = true;
         this.faltasManager = 0;
         
@@ -51,12 +55,12 @@ public class VehiclePlant {
     }
     
     public void initializeWorkers(){
-        for (int i = 0; i<6; i++){
+        /*for (int i = 0; i<6; i++){
             for (int j = 0; j<workerArray[i]; j++) {
                 if (name.equals("Bugatti")) {
                     //León Serpa: ultimo numero de carnet: 5
                     if (i == 0) {
-                        Worker worker = new Worker((float) 0.34, 10, dayDurationInMs, "chasis", this);
+                        Worker worker = new Worker(productionArray[i], 10, dayDurationInMs, "chasis", this);
                         worker.start();
                         workers[i] = worker;
                     }
@@ -101,6 +105,43 @@ public class VehiclePlant {
         
         Worker director = new Worker ((float) 1, 30, dayDurationInMs, "director", this);
         director.start();
-        this.director = director;
+        this.director = director;*/
+        for (int i = 0; i<6; i++){
+            for (int j = 0; j<workerArray[i]; j++) {
+                //switch i with cases 0-5
+                switch (i) {
+                    case 0:
+                        salary = 10;
+                        type = "chasis";
+                        break;
+                    case 1:
+                        salary = 13;
+                        type = "carroceria";
+                        break;
+                    case 2:
+                        salary = 20;
+                        type = "motor";
+                        break;
+                    case 3:
+                        salary = 8;
+                        type = "ruedas";
+                        break;
+                    case 4:
+                        salary = 17;
+                        type = "accesorios";
+                        break;
+                    case 5:
+                        salary = 25;
+                        type = "ensamblador";
+                        break;
+                    default:
+                        break;
+                }
+                Worker worker = new Worker(productionArray[i], salary, dayDurationInMs, type, this);
+                    worker.start();
+                    workers[i] = worker;
+            }
+        }
     }
 }
+
