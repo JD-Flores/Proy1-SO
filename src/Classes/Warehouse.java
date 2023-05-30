@@ -66,7 +66,12 @@ public class Warehouse {
                 break;
             case "motor":
                 if (this.motorQty < this.maxMotorQty) {
-                    this.motorQty += finishedPart;
+                    if (this.motorQty+finishedPart > this.maxMotorQty - 1){
+                        this.motorQty = this.maxMotorQty;
+                    } else {
+                        this.motorQty += finishedPart;
+                    }
+                    
                     
                     System.out.println("motor: " + this.motorQty);
                 }
