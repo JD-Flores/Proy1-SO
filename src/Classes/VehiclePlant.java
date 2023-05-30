@@ -19,6 +19,13 @@ public class VehiclePlant {
     private int[] workerArray;
     public Warehouse warehouse;
     public Semaphore mutex;
+    public int dayCount;
+    public boolean isManagerWorking;
+    public Worker manager;
+    public Worker director;
+    public int faltasManager;
+    public int costos;
+    public int ganancias;
     
     
     public VehiclePlant (String name, int maxWorkers, long dayDuration, int[] workerArray) {
@@ -29,6 +36,11 @@ public class VehiclePlant {
         this.warehouse = new Warehouse(25, 35, 20, 55, 10);
         this.mutex = new Semaphore(1);
         this.workerArray = workerArray;
+        this.isManagerWorking = true;
+        this.faltasManager = 0;
+        
+        
+        this.dayCount = 10;
         
         initializeWorkers();
         
@@ -82,5 +94,13 @@ public class VehiclePlant {
                 
             }
         }
+        
+        Worker manager = new Worker ((float) 1, 20, dayDurationInMs, "gerente", this);
+        manager.start();
+        this.manager = manager;
+        
+        Worker director = new Worker ((float) 1, 30, dayDurationInMs, "director", this);
+        director.start();
+        this.director = director;
     }
 }
