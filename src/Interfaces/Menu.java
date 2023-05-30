@@ -232,6 +232,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel109 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -344,7 +345,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, 90, -1));
 
-        BEnsamM.setText("jButton1");
+        BEnsamM.setText("-");
         BEnsamM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BEnsamMActionPerformed(evt);
@@ -352,7 +353,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 400, 30, 10));
 
-        BAcceM.setText("jButton1");
+        BAcceM.setText("-");
         BAcceM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BAcceMActionPerformed(evt);
@@ -360,7 +361,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BAcceM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 30, 10));
 
-        BChasisB.setText("jButton1");
+        BChasisB.setText("-");
         BChasisB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BChasisBActionPerformed(evt);
@@ -368,7 +369,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 30, 10));
 
-        BCarroB.setText("jButton1");
+        BCarroB.setText("-");
         BCarroB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BCarroBActionPerformed(evt);
@@ -376,7 +377,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 30, 10));
 
-        SCarroB.setText("jButton1");
+        SCarroB.setText("+");
         SCarroB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SCarroBActionPerformed(evt);
@@ -384,7 +385,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 30, 10));
 
-        SMotorB.setText("jButton1");
+        SMotorB.setText("+");
         SMotorB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SMotorBActionPerformed(evt);
@@ -392,7 +393,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 30, 10));
 
-        BMotorB.setText("jButton1");
+        BMotorB.setText("-");
         BMotorB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BMotorBActionPerformed(evt);
@@ -400,7 +401,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 30, 10));
 
-        SRuedasB.setText("jButton1");
+        SRuedasB.setText("+");
         SRuedasB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SRuedasBActionPerformed(evt);
@@ -408,7 +409,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 30, 10));
 
-        BRuedasB.setText("jButton1");
+        BRuedasB.setText("-");
         BRuedasB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BRuedasBActionPerformed(evt);
@@ -416,7 +417,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 30, 10));
 
-        SEnsamM.setText("jButton1");
+        SEnsamM.setText("+");
         SEnsamM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SEnsamMActionPerformed(evt);
@@ -424,7 +425,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, 30, 10));
 
-        SChasisB.setText("jButton1");
+        SChasisB.setText("+");
         SChasisB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SChasisBActionPerformed(evt);
@@ -432,7 +433,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 30, 10));
 
-        SChasisM.setText("jButton1");
+        SChasisM.setText("+");
         SChasisM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SChasisMActionPerformed(evt);
@@ -440,7 +441,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SChasisM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 30, 10));
 
-        BChasisM.setText("jButton1");
+        BChasisM.setText("-");
         BChasisM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BChasisMActionPerformed(evt);
@@ -448,7 +449,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BChasisM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 30, 10));
 
-        SCarroM.setText("jButton1");
+        SCarroM.setText("+");
         SCarroM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SCarroMActionPerformed(evt);
@@ -456,7 +457,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SCarroM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 30, 10));
 
-        BCarroM.setText("jButton1");
+        BCarroM.setText("-");
         BCarroM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BCarroMActionPerformed(evt);
@@ -464,7 +465,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BCarroM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, 30, 10));
 
-        SMotorM.setText("jButton1");
+        SMotorM.setText("+");
         SMotorM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SMotorMActionPerformed(evt);
@@ -472,7 +473,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SMotorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, 30, 10));
 
-        BMotorM.setText("jButton1");
+        BMotorM.setText("-");
         BMotorM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BMotorMActionPerformed(evt);
@@ -480,7 +481,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BMotorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 310, 30, 10));
 
-        SRuedasM.setText("jButton1");
+        SRuedasM.setText("+");
         SRuedasM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SRuedasMActionPerformed(evt);
@@ -488,7 +489,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SRuedasM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 30, 10));
 
-        BRuedasM.setText("jButton1");
+        BRuedasM.setText("-");
         BRuedasM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BRuedasMActionPerformed(evt);
@@ -496,7 +497,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BRuedasM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 30, 10));
 
-        SAcceM.setText("jButton1");
+        SAcceM.setText("+");
         SAcceM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SAcceMActionPerformed(evt);
@@ -510,7 +511,7 @@ public class Menu extends javax.swing.JFrame {
         NAcceBugatti.setText("1");
         jPanel1.add(NAcceBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 20, -1));
 
-        SAcceB.setText("jButton1");
+        SAcceB.setText("+");
         SAcceB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SAcceBActionPerformed(evt);
@@ -518,7 +519,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 30, 10));
 
-        BAcceB.setText("jButton1");
+        BAcceB.setText("-");
         BAcceB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BAcceBActionPerformed(evt);
@@ -532,7 +533,7 @@ public class Menu extends javax.swing.JFrame {
         NEnsamB.setText("1");
         jPanel1.add(NEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 20, -1));
 
-        SEnsamB.setText("jButton1");
+        SEnsamB.setText("+");
         SEnsamB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SEnsamBActionPerformed(evt);
@@ -540,7 +541,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 30, 10));
 
-        BEnsamB.setText("jButton1");
+        BEnsamB.setText("-");
         BEnsamB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BEnsamBActionPerformed(evt);

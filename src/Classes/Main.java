@@ -18,7 +18,7 @@ public class Main {
         
         VehiclePlant BuVehiclePlant = new VehiclePlant("Bugatti", 15, 1000, BugattiArray);
         
-        //Menu menu = new Menu();
+        Menu menu = new Menu();
 
 
         // crear 2 company simulators (Bugatti y Maserati) con los datos de los trabajadores sacados del txt
