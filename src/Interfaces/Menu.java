@@ -250,74 +250,86 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
 
         jLabel5.setText("Numero de trabajadores:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 160, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 160, -1));
 
+        NEnsamM.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NEnsamM.setText("1");
         jPanel1.add(NEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 20, -1));
 
         jLabel7.setText("Creadores de accesorios:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 150, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 150, -1));
 
         jLabel8.setText("Numero de trabajadores:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 160, -1));
 
         jLabel9.setText("Creadores de chasis:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 140, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 140, -1));
 
         jLabel10.setText("Creador de carrocería:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 140, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 140, -1));
 
         jLabel11.setText("Creadores de motor: ");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 140, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 140, -1));
 
         jLabel12.setText("Creadores de ruedas:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 140, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 140, -1));
 
+        NMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NMaserati.setText("15");
         jPanel1.add(NMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 20, -1));
 
+        NAcceMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NAcceMaserati.setText("1");
         jPanel1.add(NAcceMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 20, -1));
 
+        NCarroBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NCarroBugatti.setText("1");
-        jPanel1.add(NCarroBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 20, -1));
+        jPanel1.add(NCarroBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 20, -1));
 
+        NMotorBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NMotorBugatti.setText("1");
-        jPanel1.add(NMotorBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 20, -1));
+        jPanel1.add(NMotorBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 20, -1));
 
+        NRuedasBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NRuedasBugatti.setText("1");
-        jPanel1.add(NRuedasBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 20, -1));
+        jPanel1.add(NRuedasBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 20, -1));
 
         jLabel18.setText("Creadores de chasis:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 140, -1));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 130, -1));
 
         jLabel19.setText("Creador de carrocería:");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 140, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 130, -1));
 
         jLabel20.setText("Creadores de motor: ");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 140, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 130, -1));
 
         jLabel21.setText("Creadores de ruedas:");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 140, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 130, -1));
 
         jLabel22.setText("Ensambladores:");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 120, -1));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 120, -1));
 
+        NBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NBugatti.setText("15");
-        jPanel1.add(NBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 20, -1));
+        jPanel1.add(NBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 20, -1));
 
+        NChasisBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NChasisBugatti.setText("1");
-        jPanel1.add(NChasisBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 20, -1));
+        jPanel1.add(NChasisBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 20, -1));
 
+        NChasisMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NChasisMaserati.setText("1");
         jPanel1.add(NChasisMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 20, -1));
 
+        NCarroMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NCarroMaserati.setText("1");
         jPanel1.add(NCarroMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 20, -1));
 
+        NMotorMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NMotorMaserati.setText("1");
         jPanel1.add(NMotorMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 20, -1));
 
+        NRuedasMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NRuedasMaserati.setText("1");
         jPanel1.add(NRuedasMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 330, 20, -1));
 
@@ -351,7 +363,7 @@ public class Menu extends javax.swing.JFrame {
                 BEnsamMActionPerformed(evt);
             }
         });
-        jPanel1.add(BEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 400, 30, 10));
+        jPanel1.add(BEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 50, 20));
 
         BAcceM.setText("-");
         BAcceM.addActionListener(new java.awt.event.ActionListener() {
@@ -359,7 +371,7 @@ public class Menu extends javax.swing.JFrame {
                 BAcceMActionPerformed(evt);
             }
         });
-        jPanel1.add(BAcceM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 30, 10));
+        jPanel1.add(BAcceM, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, 50, 20));
 
         BChasisB.setText("-");
         BChasisB.addActionListener(new java.awt.event.ActionListener() {
@@ -367,7 +379,7 @@ public class Menu extends javax.swing.JFrame {
                 BChasisBActionPerformed(evt);
             }
         });
-        jPanel1.add(BChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 30, 10));
+        jPanel1.add(BChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 50, 20));
 
         BCarroB.setText("-");
         BCarroB.addActionListener(new java.awt.event.ActionListener() {
@@ -375,7 +387,7 @@ public class Menu extends javax.swing.JFrame {
                 BCarroBActionPerformed(evt);
             }
         });
-        jPanel1.add(BCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 30, 10));
+        jPanel1.add(BCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 50, 20));
 
         SCarroB.setText("+");
         SCarroB.addActionListener(new java.awt.event.ActionListener() {
@@ -383,7 +395,7 @@ public class Menu extends javax.swing.JFrame {
                 SCarroBActionPerformed(evt);
             }
         });
-        jPanel1.add(SCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 30, 10));
+        jPanel1.add(SCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 50, 20));
 
         SMotorB.setText("+");
         SMotorB.addActionListener(new java.awt.event.ActionListener() {
@@ -391,7 +403,7 @@ public class Menu extends javax.swing.JFrame {
                 SMotorBActionPerformed(evt);
             }
         });
-        jPanel1.add(SMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 30, 10));
+        jPanel1.add(SMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 50, 20));
 
         BMotorB.setText("-");
         BMotorB.addActionListener(new java.awt.event.ActionListener() {
@@ -399,7 +411,7 @@ public class Menu extends javax.swing.JFrame {
                 BMotorBActionPerformed(evt);
             }
         });
-        jPanel1.add(BMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 30, 10));
+        jPanel1.add(BMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 50, 20));
 
         SRuedasB.setText("+");
         SRuedasB.addActionListener(new java.awt.event.ActionListener() {
@@ -407,7 +419,7 @@ public class Menu extends javax.swing.JFrame {
                 SRuedasBActionPerformed(evt);
             }
         });
-        jPanel1.add(SRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 30, 10));
+        jPanel1.add(SRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 50, 20));
 
         BRuedasB.setText("-");
         BRuedasB.addActionListener(new java.awt.event.ActionListener() {
@@ -415,7 +427,7 @@ public class Menu extends javax.swing.JFrame {
                 BRuedasBActionPerformed(evt);
             }
         });
-        jPanel1.add(BRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 30, 10));
+        jPanel1.add(BRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 50, 20));
 
         SEnsamM.setText("+");
         SEnsamM.addActionListener(new java.awt.event.ActionListener() {
@@ -423,7 +435,7 @@ public class Menu extends javax.swing.JFrame {
                 SEnsamMActionPerformed(evt);
             }
         });
-        jPanel1.add(SEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, 30, 10));
+        jPanel1.add(SEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, 50, 20));
 
         SChasisB.setText("+");
         SChasisB.addActionListener(new java.awt.event.ActionListener() {
@@ -431,7 +443,7 @@ public class Menu extends javax.swing.JFrame {
                 SChasisBActionPerformed(evt);
             }
         });
-        jPanel1.add(SChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 30, 10));
+        jPanel1.add(SChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 50, 20));
 
         SChasisM.setText("+");
         SChasisM.addActionListener(new java.awt.event.ActionListener() {
@@ -439,7 +451,7 @@ public class Menu extends javax.swing.JFrame {
                 SChasisMActionPerformed(evt);
             }
         });
-        jPanel1.add(SChasisM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 30, 10));
+        jPanel1.add(SChasisM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 50, 20));
 
         BChasisM.setText("-");
         BChasisM.addActionListener(new java.awt.event.ActionListener() {
@@ -447,7 +459,7 @@ public class Menu extends javax.swing.JFrame {
                 BChasisMActionPerformed(evt);
             }
         });
-        jPanel1.add(BChasisM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 30, 10));
+        jPanel1.add(BChasisM, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 50, 20));
 
         SCarroM.setText("+");
         SCarroM.addActionListener(new java.awt.event.ActionListener() {
@@ -455,7 +467,7 @@ public class Menu extends javax.swing.JFrame {
                 SCarroMActionPerformed(evt);
             }
         });
-        jPanel1.add(SCarroM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 30, 10));
+        jPanel1.add(SCarroM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 50, 20));
 
         BCarroM.setText("-");
         BCarroM.addActionListener(new java.awt.event.ActionListener() {
@@ -463,7 +475,7 @@ public class Menu extends javax.swing.JFrame {
                 BCarroMActionPerformed(evt);
             }
         });
-        jPanel1.add(BCarroM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, 30, 10));
+        jPanel1.add(BCarroM, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 50, 20));
 
         SMotorM.setText("+");
         SMotorM.addActionListener(new java.awt.event.ActionListener() {
@@ -471,7 +483,7 @@ public class Menu extends javax.swing.JFrame {
                 SMotorMActionPerformed(evt);
             }
         });
-        jPanel1.add(SMotorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, 30, 10));
+        jPanel1.add(SMotorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, 50, 20));
 
         BMotorM.setText("-");
         BMotorM.addActionListener(new java.awt.event.ActionListener() {
@@ -479,7 +491,7 @@ public class Menu extends javax.swing.JFrame {
                 BMotorMActionPerformed(evt);
             }
         });
-        jPanel1.add(BMotorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 310, 30, 10));
+        jPanel1.add(BMotorM, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 50, 20));
 
         SRuedasM.setText("+");
         SRuedasM.addActionListener(new java.awt.event.ActionListener() {
@@ -487,7 +499,7 @@ public class Menu extends javax.swing.JFrame {
                 SRuedasMActionPerformed(evt);
             }
         });
-        jPanel1.add(SRuedasM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 30, 10));
+        jPanel1.add(SRuedasM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 50, 20));
 
         BRuedasM.setText("-");
         BRuedasM.addActionListener(new java.awt.event.ActionListener() {
@@ -495,7 +507,7 @@ public class Menu extends javax.swing.JFrame {
                 BRuedasMActionPerformed(evt);
             }
         });
-        jPanel1.add(BRuedasM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 30, 10));
+        jPanel1.add(BRuedasM, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 50, 20));
 
         SAcceM.setText("+");
         SAcceM.addActionListener(new java.awt.event.ActionListener() {
@@ -503,13 +515,14 @@ public class Menu extends javax.swing.JFrame {
                 SAcceMActionPerformed(evt);
             }
         });
-        jPanel1.add(SAcceM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 360, 30, 10));
+        jPanel1.add(SAcceM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 360, 50, 20));
 
         jLabel23.setText("Creadores de accesorios:");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 140, -1));
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 150, -1));
 
+        NAcceBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NAcceBugatti.setText("1");
-        jPanel1.add(NAcceBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 20, -1));
+        jPanel1.add(NAcceBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 20, -1));
 
         SAcceB.setText("+");
         SAcceB.addActionListener(new java.awt.event.ActionListener() {
@@ -517,7 +530,7 @@ public class Menu extends javax.swing.JFrame {
                 SAcceBActionPerformed(evt);
             }
         });
-        jPanel1.add(SAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 30, 10));
+        jPanel1.add(SAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 50, 20));
 
         BAcceB.setText("-");
         BAcceB.addActionListener(new java.awt.event.ActionListener() {
@@ -525,13 +538,14 @@ public class Menu extends javax.swing.JFrame {
                 BAcceBActionPerformed(evt);
             }
         });
-        jPanel1.add(BAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 30, 10));
+        jPanel1.add(BAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 50, 20));
 
         jLabel24.setText("Ensambladores:");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 120, -1));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 110, -1));
 
+        NEnsamB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NEnsamB.setText("1");
-        jPanel1.add(NEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 20, -1));
+        jPanel1.add(NEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 20, -1));
 
         SEnsamB.setText("+");
         SEnsamB.addActionListener(new java.awt.event.ActionListener() {
@@ -539,7 +553,7 @@ public class Menu extends javax.swing.JFrame {
                 SEnsamBActionPerformed(evt);
             }
         });
-        jPanel1.add(SEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 30, 10));
+        jPanel1.add(SEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 50, 20));
 
         BEnsamB.setText("-");
         BEnsamB.addActionListener(new java.awt.event.ActionListener() {
@@ -547,7 +561,7 @@ public class Menu extends javax.swing.JFrame {
                 BEnsamBActionPerformed(evt);
             }
         });
-        jPanel1.add(BEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 30, 10));
+        jPanel1.add(BEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 50, 20));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
