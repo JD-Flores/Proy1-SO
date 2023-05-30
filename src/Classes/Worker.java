@@ -43,7 +43,7 @@ public class Worker extends Thread{
             Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        if (this.type.equals("gerente")) {
+        if (this.type.equals("manager")) {
             
             while (true) {
                 int count = 0;

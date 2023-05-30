@@ -95,7 +95,7 @@ public class VehiclePlant {
             }
         }
         
-        Worker manager = new Worker ((float) 1, 20, dayDurationInMs, "gerente", this);
+        Worker manager = new Worker ((float) 1, 20, dayDurationInMs, "manager", this);
         manager.start();
         this.manager = manager;
         
