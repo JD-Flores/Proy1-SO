@@ -53,6 +53,16 @@ public class VehiclePlant {
     public String getName() {
         return name;
     }
+
+    public Worker[] getWorkers() {
+        return workers;
+    }
+
+    public void setWorkers(Worker[] workers) {
+        this.workers = workers;
+    }
+    
+    
     
     public void initializeWorkers(){
         /*for (int i = 0; i<6; i++){

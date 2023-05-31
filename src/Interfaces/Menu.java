@@ -8,6 +8,8 @@ package Interfaces;
 import Classes.Functions;
 import Classes.VehiclePlant;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -52,6 +54,9 @@ public class Menu extends javax.swing.JFrame {
     
     int[] BugattiStartArray = new int[6];
     int[] MaseratiStartArray = new int[6];
+    
+    VehiclePlant BuVehiclePlant;
+    VehiclePlant MaVehiclePlant;
     
     
     public Menu() {
@@ -110,7 +115,30 @@ public class Menu extends javax.swing.JFrame {
         
         
     }
+    
+    private void startTimer() {
+        int delay = 500; // milliseconds
+        ActionListener taskPerformer = new ActionListener() {
+           public void actionPerformed(ActionEvent evt) {
+                chasisBCounterLabel.setText(Integer.toString((int)Math.floor(BuVehiclePlant.warehouse.chasisQty)));
+                carroBCounterLabel.setText(Integer.toString((int)Math.floor(BuVehiclePlant.warehouse.carroQty)));
+                motorBCounterLabel.setText(Integer.toString((int)Math.floor(BuVehiclePlant.warehouse.motorQty)));
+                ruedasBCounterLabel.setText(Integer.toString((int)Math.floor(BuVehiclePlant.warehouse.wheelsQty)));
+                accesBCounterLabel.setText(Integer.toString((int)Math.floor(BuVehiclePlant.warehouse.accesQty)));
+                specialVehicleBCounterLabel.setText(Integer.toString((int)Math.floor(BuVehiclePlant.warehouse.specialVehicle)));
+                standardVehicleBCounterLabel.setText(Integer.toString((int)Math.floor(BuVehiclePlant.warehouse.standardVehicle)));
 
+                chasisMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.chasisQty)));
+                carroMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.carroQty)));
+                motorMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.motorQty)));
+                ruedasMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.wheelsQty)));
+                accesMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.accesQty)));
+                specialVehicleMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.specialVehicle)));
+                standardVehicleMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.standardVehicle)));
+           }
+        };
+      new javax.swing.Timer(delay, taskPerformer).start();
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -193,16 +221,16 @@ public class Menu extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
+        accesBCounterLabel = new javax.swing.JLabel();
+        carroBCounterLabel = new javax.swing.JLabel();
+        motorBCounterLabel = new javax.swing.JLabel();
+        ruedasBCounterLabel = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
+        carroMCounterLabel = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
@@ -213,7 +241,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
+        specialVehicleBCounterLabel = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
@@ -230,21 +258,21 @@ public class Menu extends javax.swing.JFrame {
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
+        chasisBCounterLabel = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
+        accesMCounterLabel = new javax.swing.JLabel();
+        motorMCounterLabel = new javax.swing.JLabel();
+        ruedasMCounterLabel = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
-        jLabel79 = new javax.swing.JLabel();
+        chasisMCounterLabel = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
@@ -252,9 +280,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel84 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
         jLabel86 = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
-        jLabel88 = new javax.swing.JLabel();
-        jLabel89 = new javax.swing.JLabel();
+        standardVehicleBCounterLabel = new javax.swing.JLabel();
+        standardVehicleMCounterLabel = new javax.swing.JLabel();
+        specialVehicleMCounterLabel = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
         jLabel92 = new javax.swing.JLabel();
@@ -651,17 +679,17 @@ public class Menu extends javax.swing.JFrame {
         jLabel26.setText("Ruedas:");
         jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 80, -1));
 
-        jLabel27.setText("0");
-        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 20, -1));
+        accesBCounterLabel.setText("0");
+        jPanel2.add(accesBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 20, -1));
 
-        jLabel29.setText("0");
-        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 20, -1));
+        carroBCounterLabel.setText("0");
+        jPanel2.add(carroBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 20, -1));
 
-        jLabel30.setText("0");
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 20, -1));
+        motorBCounterLabel.setText("0");
+        jPanel2.add(motorBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 20, -1));
 
-        jLabel31.setText("0");
-        jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 20, -1));
+        ruedasBCounterLabel.setText("0");
+        jPanel2.add(ruedasBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 20, -1));
 
         jLabel32.setText("Chasis:");
         jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 60, -1));
@@ -678,16 +706,16 @@ public class Menu extends javax.swing.JFrame {
         jLabel36.setText("Max:");
         jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 40, -1));
 
-        jLabel37.setText("0");
-        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 20, -1));
+        carroMCounterLabel.setText("0");
+        jPanel2.add(carroMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 20, -1));
 
-        jLabel38.setText("0");
+        jLabel38.setText("25");
         jPanel2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 20, -1));
 
-        jLabel39.setText("0");
+        jLabel39.setText("20");
         jPanel2.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 20, -1));
 
-        jLabel40.setText("0");
+        jLabel40.setText("55");
         jPanel2.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 20, -1));
 
         jLabel41.setText("0");
@@ -702,7 +730,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel44.setText("Utilidad total:");
         jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, -1, -1));
 
-        jLabel45.setText("0");
+        jLabel45.setText("10");
         jPanel2.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 20, -1));
 
         jLabel46.setText("0");
@@ -711,8 +739,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel47.setText("Vehículo con accesorios:");
         jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
 
-        jLabel48.setText("0");
-        jPanel2.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 20, -1));
+        specialVehicleBCounterLabel.setText("0");
+        jPanel2.add(specialVehicleBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 20, -1));
 
         jLabel49.setText("Días para la entrega:");
         jPanel2.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, -1));
@@ -733,7 +761,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, -1, -1));
 
         jLabel55.setText("0");
-        jPanel2.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 20, -1));
+        jPanel2.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 20, -1));
 
         jLabel56.setText("0");
         jPanel2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 20, -1));
@@ -741,7 +769,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel57.setText("Vehículo estándar:");
         jPanel2.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
 
-        jLabel58.setText("0");
+        jLabel58.setText("35");
         jPanel2.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 20, -1));
 
         jLabel59.setText("Ganancia en Bruto:");
@@ -762,8 +790,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel64.setText("Chasis:");
         jPanel2.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 80, -1));
 
-        jLabel65.setText("0");
-        jPanel2.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 20, -1));
+        chasisBCounterLabel.setText("0");
+        jPanel2.add(chasisBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 20, -1));
 
         jLabel66.setText("Carrocería:");
         jPanel2.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 80, -1));
@@ -777,17 +805,17 @@ public class Menu extends javax.swing.JFrame {
         jLabel70.setText("Accesorios:");
         jPanel2.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 80, -1));
 
-        jLabel69.setText("0");
+        jLabel69.setText("10");
         jPanel2.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 20, -1));
 
-        jLabel71.setText("0");
-        jPanel2.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 20, -1));
+        accesMCounterLabel.setText("0");
+        jPanel2.add(accesMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 20, -1));
 
-        jLabel72.setText("0");
-        jPanel2.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 20, -1));
+        motorMCounterLabel.setText("0");
+        jPanel2.add(motorMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 20, -1));
 
-        jLabel73.setText("0");
-        jPanel2.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 20, -1));
+        ruedasMCounterLabel.setText("0");
+        jPanel2.add(ruedasMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 20, -1));
 
         jLabel74.setText("Max:");
         jPanel2.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 40, -1));
@@ -804,38 +832,38 @@ public class Menu extends javax.swing.JFrame {
         jLabel78.setText("Max:");
         jPanel2.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 40, -1));
 
-        jLabel79.setText("0");
-        jPanel2.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 20, -1));
+        chasisMCounterLabel.setText("0");
+        jPanel2.add(chasisMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 20, -1));
 
-        jLabel80.setText("0");
+        jLabel80.setText("25");
         jPanel2.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 20, -1));
 
-        jLabel81.setText("0");
+        jLabel81.setText("20");
         jPanel2.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 20, -1));
 
-        jLabel82.setText("0");
+        jLabel82.setText("55");
         jPanel2.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 20, -1));
 
-        jLabel83.setText("0");
+        jLabel83.setText("35");
         jPanel2.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 20, -1));
 
-        jLabel84.setText("Vehículo estándar:");
+        jLabel84.setText("Vehículos estándar:");
         jPanel2.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
 
-        jLabel85.setText("Vehículo con accesorios:");
+        jLabel85.setText("Vehículos con accesorios:");
         jPanel2.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
         jLabel86.setText("Días para la entrega:");
         jPanel2.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
-        jLabel87.setText("0");
-        jPanel2.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 20, -1));
+        standardVehicleBCounterLabel.setText("0");
+        jPanel2.add(standardVehicleBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 20, -1));
 
-        jLabel88.setText("0");
-        jPanel2.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 20, -1));
+        standardVehicleMCounterLabel.setText("0");
+        jPanel2.add(standardVehicleMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 20, -1));
 
-        jLabel89.setText("0");
-        jPanel2.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 20, -1));
+        specialVehicleMCounterLabel.setText("0");
+        jPanel2.add(specialVehicleMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 20, -1));
 
         jLabel90.setText("Gerente de operaciones:");
         jPanel2.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
@@ -948,7 +976,7 @@ public class Menu extends javax.swing.JFrame {
         BugattiStartArray[4] = acceB;
         BugattiStartArray[5] = ensamB;
 
-        VehiclePlant BuVehiclePlant = new VehiclePlant("Bugatti", 15, 500, BugattiStartArray, BugattiProductionArray, BugattiAssemblyNeeds);
+        BuVehiclePlant = new VehiclePlant("Bugatti", 15, 500, BugattiStartArray, BugattiProductionArray, BugattiAssemblyNeeds);
         
         MaseratiStartArray[0] = chasisM;
         MaseratiStartArray[1] = carroM;
@@ -957,7 +985,8 @@ public class Menu extends javax.swing.JFrame {
         MaseratiStartArray[4] = acceM;
         MaseratiStartArray[5] = ensamM;
 
-        VehiclePlant MaVehiclePlant = new VehiclePlant("Maserati", 17, 500, MaseratiStartArray, MaseratiProductionArray, MaseratiAssemblyNeeds);
+        MaVehiclePlant = new VehiclePlant("Maserati", 17, 500, MaseratiStartArray, MaseratiProductionArray, MaseratiAssemblyNeeds);
+        startTimer();
     }//GEN-LAST:event_StartActionPerformed
 
     private void StopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopActionPerformed
@@ -1264,6 +1293,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Stop;
     private javax.swing.JButton Stop1;
     private javax.swing.JButton Stop2;
+    private javax.swing.JLabel accesBCounterLabel;
+    private javax.swing.JLabel accesMCounterLabel;
+    private javax.swing.JLabel carroBCounterLabel;
+    private javax.swing.JLabel carroMCounterLabel;
+    private javax.swing.JLabel chasisBCounterLabel;
+    private javax.swing.JLabel chasisMCounterLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -1293,18 +1328,13 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
@@ -1316,7 +1346,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
@@ -1335,22 +1364,17 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
@@ -1359,9 +1383,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
-    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
@@ -1378,5 +1399,13 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel motorBCounterLabel;
+    private javax.swing.JLabel motorMCounterLabel;
+    private javax.swing.JLabel ruedasBCounterLabel;
+    private javax.swing.JLabel ruedasMCounterLabel;
+    private javax.swing.JLabel specialVehicleBCounterLabel;
+    private javax.swing.JLabel specialVehicleMCounterLabel;
+    private javax.swing.JLabel standardVehicleBCounterLabel;
+    private javax.swing.JLabel standardVehicleMCounterLabel;
     // End of variables declaration//GEN-END:variables
 }

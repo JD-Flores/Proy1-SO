@@ -194,5 +194,14 @@ public class Worker extends Thread{
             
         }
     }
+
+    public float getProductionCounter() {
+        return productionCounter;
+    }
+
+    public void setProductionCounter(float productionCounter) {
+        this.productionCounter = productionCounter;
+    }
+    
     
 }
