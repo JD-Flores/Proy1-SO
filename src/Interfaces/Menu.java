@@ -51,6 +51,8 @@ public class Menu extends javax.swing.JFrame {
     int acceM;
     int ensamM;
     int maxM;
+
+    int suma=0;
     
     
     public Menu() {
@@ -59,6 +61,38 @@ public class Menu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.setResizable(false);
+        
+        suma = 0;
+        for (int i = 0; i < BugattiArray.length; i++) {
+            suma += BugattiArray[i];
+        }
+        if (suma <= 15) {
+            NChasisBugatti.setText(Integer.toString(BugattiArray[0]));
+            NCarroBugatti.setText(Integer.toString(BugattiArray[1]));
+            NMotorBugatti.setText(Integer.toString(BugattiArray[2]));
+            NRuedasBugatti.setText(Integer.toString(BugattiArray[3]));
+            NAcceBugatti.setText(Integer.toString(BugattiArray[4]));
+            NEnsamB.setText(Integer.toString(BugattiArray[5]));
+        } else {
+            JOptionPane.showMessageDialog(null, "Fallo al cargar trabajadores: La suma de los trabajadores de Bugatti es mayor a 15");
+        }
+            
+        suma=0;
+        for (int i = 0; i < MaseratiArray.length; i++) {
+            System.out.println(MaseratiArray[i]);
+            suma += MaseratiArray[i];
+        }
+        if (suma <= 17) {
+            NChasisMaserati.setText(Integer.toString(MaseratiArray[0]));
+            NCarroMaserati.setText(Integer.toString(MaseratiArray[1]));
+            NMotorMaserati.setText(Integer.toString(MaseratiArray[2]));
+            NRuedasMaserati.setText(Integer.toString(MaseratiArray[3]));
+            NAcceMaserati.setText(Integer.toString(MaseratiArray[4]));
+            NEnsamM.setText(Integer.toString(MaseratiArray[5]));
+        } else {
+            JOptionPane.showMessageDialog(null, "Fallo al cargar tarbajadores: La suma de los trabajadores de Maserati es mayor a 17");
+        }
+        
         
         this.chasisB = Integer.parseInt(NChasisBugatti.getText());
         this.carroB = Integer.parseInt(NCarroBugatti.getText());

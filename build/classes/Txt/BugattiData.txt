@@ -1,7 +1,7 @@
 Bugatti:
-Creadores de chasis: 1
-Creadores de carroceria: 1
-Creadores de motores: 1
-Creadores de ruedas: 1
-Creadores de accesorios: 1
-Ensambladores: 1
+Creadores de chasis: 2
+Creadores de carroceria: 2
+Creadores de motores: 2
+Creadores de ruedas: 2
+Creadores de accesorios: 2
+Ensambladores: 2
