@@ -60,14 +60,24 @@ public class Warehouse {
                 break;
             case "ruedas":
                 if (this.wheelsQty < this.maxWheelsQty) {
-                    this.wheelsQty += finishedPart;
+                    //this.wheelsQty += finishedPart;
+                    if (this.wheelsQty+finishedPart > this.maxWheelsQty - 1){
+                        this.wheelsQty = this.maxWheelsQty;
+                    } else {
+                        this.wheelsQty += finishedPart;
+                    }
+                    
                     
                     System.out.println("ruedas: " + this.wheelsQty);
                 }
                 break;
             case "motor":
                 if (this.motorQty < this.maxMotorQty) {
-                    this.motorQty += finishedPart;
+                    if (this.motorQty+finishedPart > this.maxMotorQty - 1){
+                        this.motorQty = this.maxMotorQty;
+                    } else {
+                        this.motorQty += finishedPart;
+                    }
                     
                     System.out.println("motor: " + this.motorQty);
                 }

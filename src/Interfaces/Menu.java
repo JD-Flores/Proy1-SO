@@ -987,6 +987,7 @@ public class Menu extends javax.swing.JFrame {
 
         MaVehiclePlant = new VehiclePlant("Maserati", 17, 500, MaseratiStartArray, MaseratiProductionArray, MaseratiAssemblyNeeds);
         startTimer();
+        jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_StartActionPerformed
 
     private void StopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopActionPerformed
