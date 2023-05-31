@@ -25,16 +25,12 @@ public class Menu extends javax.swing.JFrame {
     //León Serpa - Bugatti - Ult. num. carnet: 5
     float[] BugattiProductionArray = {(float)0.34, (float)0.34, 2, 5, (float)0.5, (float)0.5};
     int[] BugattiAssemblyNeeds = {2,1,4,4,2};
-                
-    VehiclePlant BuVehiclePlant = new VehiclePlant("Bugatti", 15, 500, BugattiArray, BugattiProductionArray, BugattiAssemblyNeeds);
     
     String MaseratiData = func.readMaseratiData();
     int[] MaseratiArray = func.transformMaseratiData(MaseratiData);
     //Juan Flores - Maserati - Ult. num. carnet: 7
     float[] MaseratiProductionArray = {(float)0.25, (float)0.25, 1, 5, (float)0.5, (float)0.5};
     int[] MaseratiAssemblyNeeds = {1,1,2,4,3};
-    
-    VehiclePlant MaVehiclePlant = new VehiclePlant("Maserati", 17, 500, MaseratiArray, MaseratiProductionArray, MaseratiAssemblyNeeds);
     
     int chasisB;
     int carroB;
@@ -53,6 +49,9 @@ public class Menu extends javax.swing.JFrame {
     int maxM;
 
     int suma=0;
+    
+    int[] BugattiStartArray = new int[6];
+    int[] MaseratiStartArray = new int[6];
     
     
     public Menu() {
@@ -79,7 +78,6 @@ public class Menu extends javax.swing.JFrame {
             
         suma=0;
         for (int i = 0; i < MaseratiArray.length; i++) {
-            System.out.println(MaseratiArray[i]);
             suma += MaseratiArray[i];
         }
         if (suma <= 17) {
@@ -327,7 +325,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 140, -1));
 
         NMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NMaserati.setText("15");
+        NMaserati.setText("17");
         jPanel1.add(NMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 20, -1));
 
         NAcceMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -943,7 +941,23 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
-        // TODO add your handling code here:
+        BugattiStartArray[0] = chasisB;
+        BugattiStartArray[1] = carroB;
+        BugattiStartArray[2] = motorB;
+        BugattiStartArray[3] = ruedasB;
+        BugattiStartArray[4] = acceB;
+        BugattiStartArray[5] = ensamB;
+
+        VehiclePlant BuVehiclePlant = new VehiclePlant("Bugatti", 15, 500, BugattiStartArray, BugattiProductionArray, BugattiAssemblyNeeds);
+        
+        MaseratiStartArray[0] = chasisM;
+        MaseratiStartArray[1] = carroM;
+        MaseratiStartArray[2] = motorM;
+        MaseratiStartArray[3] = ruedasM;
+        MaseratiStartArray[4] = acceM;
+        MaseratiStartArray[5] = ensamM;
+
+        VehiclePlant MaVehiclePlant = new VehiclePlant("Maserati", 17, 500, MaseratiStartArray, MaseratiProductionArray, MaseratiAssemblyNeeds);
     }//GEN-LAST:event_StartActionPerformed
 
     private void StopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopActionPerformed
