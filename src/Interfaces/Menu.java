@@ -23,16 +23,16 @@ public class Menu extends javax.swing.JFrame {
 
     private Functions func = new Functions();
     
-    String BugattiData = func.readBugattiData();
-    int[] BugattiArray = func.transformBugattiData(BugattiData);
+    String BugattiData = func.readPlantData("Bugatti");
+    int[] BugattiArray = func.transformVehicleData(BugattiData, "Bugatti");
     //León Serpa - Bugatti - Ult. num. carnet: 5
     float[] BugattiProductionArray = {(float)0.34, (float)0.34, 2, 5, (float)0.5, (float)0.5};
     int[] BugattiAssemblyNeeds = {2,1,4,4,2};
     int[] BugattiPricesArray = {550000, 600000};
     int BugattiDeadlineInDays = BugattiArray[6];
     
-    String MaseratiData = func.readMaseratiData();
-    int[] MaseratiArray = func.transformMaseratiData(MaseratiData);
+    String MaseratiData = func.readPlantData("Maserati");
+    int[] MaseratiArray = func.transformVehicleData(MaseratiData, "Maserati");
     //Juan Flores - Maserati - Ult. num. carnet: 7
     float[] MaseratiProductionArray = {(float)0.25, (float)0.25, 1, 5, (float)0.5, (float)0.5};
     int[] MaseratiAssemblyNeeds = {1,1,2,4,3};
