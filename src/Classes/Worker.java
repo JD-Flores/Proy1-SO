@@ -69,9 +69,7 @@ public class Worker extends Thread{
                         Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     payCheck();
-                    if(plant.dayCount>0){
-                        plant.dayCount++;
-                    } 
+                    plant.dayCount++;
 
 
                 }
@@ -88,13 +86,11 @@ public class Worker extends Thread{
             
             while (true) {
                 while(Global.play) {
-                    if(plant.dayCount % plant.deadlineInDays == 0) {
+                    if((plant.dayCount!=0)&&(plant.dayCount % plant.deadlineInDays == 0)) {
                         try {
                             state = "Enviando vehículos";
                             sellVehicles();
                             sleep(this.dayDurationInMs);
-
-                            plant.dayCount = plant.deadlineInDays;
                         } catch (InterruptedException ex) {
                             Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -125,7 +121,6 @@ public class Worker extends Thread{
                                 punishManager();
                             }
                         }
-                        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                         state = "Labores administrativas";
                         try {
                             sleep(this.dayDurationInMs-randomTime);

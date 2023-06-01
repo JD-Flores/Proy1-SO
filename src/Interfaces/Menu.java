@@ -159,16 +159,16 @@ public class Menu extends javax.swing.JFrame {
                 BuFaltas.setText(Integer.toString(BuVehiclePlant.faltasManager));
                 MaFaltas.setText(Integer.toString(MaVehiclePlant.faltasManager));
                 
-                BuPenalty.setText(Integer.toString(BuVehiclePlant.faltasManager*50));
-                MaPenalty.setText(Integer.toString(MaVehiclePlant.faltasManager*50));
+                BuPenalty.setText(Integer.toString(BuVehiclePlant.faltasManager*50)+"$");
+                MaPenalty.setText(Integer.toString(MaVehiclePlant.faltasManager*50)+"$");
                 
-                BuWinnings.setText(Integer.toString(BuVehiclePlant.ganancias));
-                BuCosts.setText(Integer.toString(BuVehiclePlant.costos));
-                BuUtility.setText(Integer.toString(BuVehiclePlant.ganancias-BuVehiclePlant.costos));
+                BuWinnings.setText(Integer.toString(BuVehiclePlant.ganancias)+"$");
+                BuCosts.setText(Integer.toString(BuVehiclePlant.costos)+"$");
+                BuUtility.setText(Integer.toString(BuVehiclePlant.ganancias-BuVehiclePlant.costos)+"$");
                 
-                MaWinnings.setText(Integer.toString(MaVehiclePlant.ganancias));
-                MaCosts.setText(Integer.toString(MaVehiclePlant.costos));
-                MaUtility.setText(Integer.toString(MaVehiclePlant.ganancias-BuVehiclePlant.costos));
+                MaWinnings.setText(Integer.toString(MaVehiclePlant.ganancias)+"$");
+                MaCosts.setText(Integer.toString(MaVehiclePlant.costos)+"$");
+                MaUtility.setText(Integer.toString(MaVehiclePlant.ganancias-BuVehiclePlant.costos)+"$");
                 
                 
                 if (BuVehiclePlant.isManagerWorking) {
@@ -805,10 +805,10 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, -1, -1));
 
         directorStateMLabel.setText("Algo");
-        jPanel2.add(directorStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
+        jPanel2.add(directorStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 140, -1));
 
         managerStateMLabel.setText("Algo");
-        jPanel2.add(managerStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
+        jPanel2.add(managerStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 100, -1));
 
         jLabel53.setText("Gerente de operaciones:");
         jPanel2.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, -1, -1));
@@ -820,7 +820,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.add(BuTimeUntilDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 20, -1));
 
         MaFaltas.setText("0");
-        jPanel2.add(MaFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 20, -1));
+        jPanel2.add(MaFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 90, -1));
 
         jLabel57.setText("Vehículo estándar:");
         jPanel2.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
@@ -934,16 +934,16 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
         managerStateBLabel.setText("Algo");
-        jPanel2.add(managerStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
+        jPanel2.add(managerStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 130, -1));
 
         BuFaltas.setText("0");
-        jPanel2.add(BuFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 20, -1));
+        jPanel2.add(BuFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 70, -1));
 
         BuPenalty.setText("0");
-        jPanel2.add(BuPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 20, -1));
+        jPanel2.add(BuPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 70, -1));
 
         directorStateBLabel.setText("Algo");
-        jPanel2.add(directorStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
+        jPanel2.add(directorStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 140, -1));
 
         jLabel98.setText("Ganancia en Bruto:");
         jPanel2.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
@@ -989,7 +989,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, -1, -1));
 
         MaPenalty.setText("0");
-        jPanel2.add(MaPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 20, -1));
+        jPanel2.add(MaPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, 90, -1));
 
         jLabel30.setText("Motor:");
         jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 80, -1));
