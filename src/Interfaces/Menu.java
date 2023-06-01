@@ -235,7 +235,6 @@ public class Menu extends javax.swing.JFrame {
                 jPanel4.setLayout(new BorderLayout());
                 jPanel4.add(panel,BorderLayout.NORTH);
                 
-                System.out.println("funciono");
                 pack();
                 repaint();
 
