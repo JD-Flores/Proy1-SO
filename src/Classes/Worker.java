@@ -84,7 +84,7 @@ public class Worker extends Thread{
                         sellVehicles();
                         sleep(this.dayDurationInMs);
                        
-                        plant.dayCount = 10;
+                        plant.dayCount = plant.deadlineInDays;
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -93,30 +93,33 @@ public class Worker extends Thread{
                     int randomTime = random.nextInt((int) this.dayDurationInMs);
                     try {
                         sleep(randomTime);
+                        System.out.println(this.plant.getName()+" Tiempo random: "+randomTime);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    if(plant.isManagerWorking) {
+                    System.out.println(this.plant.getName()+" 25 min: "+this.dayDurationInMs*25/(60*24));
+                    if(!plant.isManagerWorking) {
                         punishManager();
                         System.out.println("se ha penalizado al manager");
                         try {
-                            sleep((this.dayDurationInMs*2*25)/30);
+                            sleep(this.dayDurationInMs*25/(60*24));
                         } catch (InterruptedException ex) {
                             Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     } else {
                         try {
-                            sleep((this.dayDurationInMs*2*25)/30);
+                            sleep(this.dayDurationInMs*25/(60*24));
                         } catch (InterruptedException ex) {
                             Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        if (plant.isManagerWorking) {
+                        if (!plant.isManagerWorking) {
                             punishManager();
                             System.out.println("se ha penalizado al manager");
                         }
                     }
                     try {
-                        sleep(this.dayDurationInMs-randomTime);
+                        sleep(this.dayDurationInMs-randomTime-this.dayDurationInMs*25/(60*24));
+                        System.out.println(this.plant.getName()+" Tiempo resto del dia: "+(this.dayDurationInMs-randomTime-this.dayDurationInMs*25/(60*24)));
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                     }

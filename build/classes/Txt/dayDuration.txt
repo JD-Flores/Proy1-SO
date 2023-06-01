@@ -1,1 +1,1 @@
-dayDuration: 500
+dayDuration: 1000
