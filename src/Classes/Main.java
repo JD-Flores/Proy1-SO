@@ -12,6 +12,7 @@ public class Main {
         String BugattiData = func.readBugattiData();
         JOptionPane.showMessageDialog(null, BugattiData); */
         
+        
         Menu menu = new Menu();
 
 

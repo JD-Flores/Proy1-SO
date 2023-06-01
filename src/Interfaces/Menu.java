@@ -8,11 +8,19 @@ package Interfaces;
 import Classes.Functions;
 import Classes.Global;
 import Classes.VehiclePlant;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.ui.RefineryUtilities;
 
 
 /**
@@ -128,7 +136,7 @@ public class Menu extends javax.swing.JFrame {
         
         this.dayDurationSpinner.setValue(dayDurationInMs);
         
-        
+
     }
     
     private void startTimer() {
@@ -186,9 +194,56 @@ public class Menu extends javax.swing.JFrame {
                 directorStateBLabel.setText(BuVehiclePlant.director.state);
                 directorStateMLabel.setText(MaVehiclePlant.director.state);
                 
+                
+                
            }
         };
       new javax.swing.Timer(delay, taskPerformer).start();
+   }
+    
+   private void startTimerGraph() {
+       int delay = this.dayDurationInMs;
+       ActionListener taskPerformer = new ActionListener() {
+           public void actionPerformed(ActionEvent evt) {
+               
+                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                datos.setValue(BuVehiclePlant.costos, "Costos", "Bugatti");
+                datos.setValue(BuVehiclePlant.ganancias, "Ganancias","Bugatti");
+                datos.setValue(BuVehiclePlant.ganancias-BuVehiclePlant.costos, "Utilidad", "Bugatti");
+
+                datos.setValue(MaVehiclePlant.costos, "Costos", "Maserati");
+                datos.setValue(MaVehiclePlant.ganancias, "Ganancias","Maserati");
+                datos.setValue(MaVehiclePlant.ganancias-MaVehiclePlant.costos, "Utilidad", "Maserati");
+
+
+                JFreeChart grafico_barras = ChartFactory.createBarChart3D(
+                    "Comparación de Compañias",
+                    "",
+                    "Dólares",
+                    datos,
+                    PlotOrientation.VERTICAL,
+                    true,
+                    true,
+                    false
+                );
+
+                ChartPanel panel = new ChartPanel(grafico_barras);
+                panel.setMouseWheelEnabled(true);
+                panel.setPreferredSize(new Dimension(400,300));
+
+                jPanel4.removeAll();
+                jPanel4.setLayout(new BorderLayout());
+                jPanel4.add(panel,BorderLayout.NORTH);
+                
+                System.out.println("funciono");
+                pack();
+                repaint();
+
+
+        
+           }
+       };
+       new javax.swing.Timer(delay, taskPerformer).start();
    }
 
     /**
@@ -365,6 +420,7 @@ public class Menu extends javax.swing.JFrame {
         Play2 = new javax.swing.JButton();
         jLabel108 = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -1025,6 +1081,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel109.setText("Maserati");
         jPanel3.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 720, 320));
 
         jTabbedPane1.addTab("    Gráficos   ", jPanel3);
 
@@ -1034,6 +1091,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
+        
+        Global.play = true;
         dayDurationInMs = (int) dayDurationSpinner.getValue();
         BugattiDeadlineInDays = (int) BugattiDeadlineSpinner.getValue();
         
@@ -1057,6 +1116,7 @@ public class Menu extends javax.swing.JFrame {
 
         MaVehiclePlant = new VehiclePlant("Maserati", 17, dayDurationInMs, MaseratiStartArray, MaseratiProductionArray, MaseratiAssemblyNeeds, BugattiPricesArray, MaseratiDeadlineInDays);
         startTimer();
+        startTimerGraph();
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_StartActionPerformed
 
@@ -1469,6 +1529,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel managerStateBLabel;
     private javax.swing.JLabel managerStateMLabel;
