@@ -28,6 +28,7 @@ public class Menu extends javax.swing.JFrame {
     float[] BugattiProductionArray = {(float)0.34, (float)0.34, 2, 5, (float)0.5, (float)0.5};
     int[] BugattiAssemblyNeeds = {2,1,4,4,2};
     int[] BugattiPricesArray = {550000, 600000};
+    int BugattiDeadlineInDays = BugattiArray[6];
     
     String MaseratiData = func.readMaseratiData();
     int[] MaseratiArray = func.transformMaseratiData(MaseratiData);
@@ -35,6 +36,7 @@ public class Menu extends javax.swing.JFrame {
     float[] MaseratiProductionArray = {(float)0.25, (float)0.25, 1, 5, (float)0.5, (float)0.5};
     int[] MaseratiAssemblyNeeds = {1,1,2,4,3};
     int[] MaseratiPricesArray = {350000,700000};
+    int MaseratiDeadlineInDays = MaseratiArray[6];
     
     int dayDurationInMs = func.readDayDurationData();
     
@@ -59,9 +61,6 @@ public class Menu extends javax.swing.JFrame {
     int[] BugattiStartArray = new int[6];
     int[] MaseratiStartArray = new int[6];
     
-    int BugattiDeadlineInDays;
-    int MaseratiDeadlineInDays;
-    
     VehiclePlant BuVehiclePlant;
     VehiclePlant MaVehiclePlant;
     
@@ -74,7 +73,7 @@ public class Menu extends javax.swing.JFrame {
         this.setResizable(false);
         
         suma = 0;
-        for (int i = 0; i < BugattiArray.length; i++) {
+        for (int i = 0; i < BugattiArray.length-1; i++) {
             suma += BugattiArray[i];
         }
         if (suma <= 15) {
@@ -89,7 +88,7 @@ public class Menu extends javax.swing.JFrame {
         }
             
         suma=0;
-        for (int i = 0; i < MaseratiArray.length; i++) {
+        for (int i = 0; i < MaseratiArray.length-1; i++) {
             suma += MaseratiArray[i];
         }
         if (suma <= 17) {
@@ -119,6 +118,12 @@ public class Menu extends javax.swing.JFrame {
         this.acceM = Integer.parseInt(NAcceMaserati.getText());
         this.ensamM = Integer.parseInt(NEnsamM.getText());
         this.maxM = Integer.parseInt(NMaserati.getText());
+        
+        this.BugattiDeadlineInDays = BugattiArray[6];
+        BugattiDeadlineSpinner.setValue(BugattiDeadlineInDays);
+        
+        this.MaseratiDeadlineInDays = MaseratiArray[6];
+        MaseratiDeadlineSpinner.setValue(MaseratiDeadlineInDays);
         
         this.dayDurationSpinner.setValue(dayDurationInMs);
         
@@ -234,6 +239,10 @@ public class Menu extends javax.swing.JFrame {
         BEnsamB = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         dayDurationSpinner = new javax.swing.JSpinner();
+        jLabel27 = new javax.swing.JLabel();
+        MaseratiDeadlineSpinner = new javax.swing.JSpinner();
+        jLabel29 = new javax.swing.JLabel();
+        BugattiDeadlineSpinner = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -439,7 +448,7 @@ public class Menu extends javax.swing.JFrame {
                 StartActionPerformed(evt);
             }
         });
-        jPanel1.add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 170, 50));
+        jPanel1.add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 170, 50));
 
         Stop.setText("Parar");
         Stop.addActionListener(new java.awt.event.ActionListener() {
@@ -447,7 +456,7 @@ public class Menu extends javax.swing.JFrame {
                 StopActionPerformed(evt);
             }
         });
-        jPanel1.add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, 90, -1));
+        jPanel1.add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, 90, -1));
 
         Play.setText("Reanudar");
         Play.addActionListener(new java.awt.event.ActionListener() {
@@ -455,7 +464,7 @@ public class Menu extends javax.swing.JFrame {
                 PlayActionPerformed(evt);
             }
         });
-        jPanel1.add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, 90, -1));
+        jPanel1.add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 90, -1));
 
         BEnsamM.setText("-");
         BEnsamM.addActionListener(new java.awt.event.ActionListener() {
@@ -664,8 +673,16 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(BEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 50, 20));
 
         jLabel28.setText("Duración del día (en ms):");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 150, -1));
-        jPanel1.add(dayDurationSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 100, -1));
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 150, -1));
+        jPanel1.add(dayDurationSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 100, -1));
+
+        jLabel27.setText("Deadline:");
+        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
+        jPanel1.add(MaseratiDeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 80, -1));
+
+        jLabel29.setText("Deadline:");
+        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, -1, -1));
+        jPanel1.add(BugattiDeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 80, -1));
 
         jTabbedPane1.addTab("Configuración", jPanel1);
 
@@ -979,13 +996,14 @@ public class Menu extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("    Gráficos   ", jPanel3);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 823, 537));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 823, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
         dayDurationInMs = (int) dayDurationSpinner.getValue();
+        BugattiDeadlineInDays = (int) BugattiDeadlineSpinner.getValue();
         
         BugattiStartArray[0] = chasisB;
         BugattiStartArray[1] = carroB;
@@ -995,6 +1013,8 @@ public class Menu extends javax.swing.JFrame {
         BugattiStartArray[5] = ensamB;
 
         BuVehiclePlant = new VehiclePlant("Bugatti", 15, dayDurationInMs, BugattiStartArray, BugattiProductionArray, BugattiAssemblyNeeds, BugattiPricesArray, BugattiDeadlineInDays);
+        
+        MaseratiDeadlineInDays = (int) MaseratiDeadlineSpinner.getValue();
         
         MaseratiStartArray[0] = chasisM;
         MaseratiStartArray[1] = carroM;
@@ -1275,6 +1295,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton BMotorM;
     private javax.swing.JButton BRuedasB;
     private javax.swing.JButton BRuedasM;
+    private javax.swing.JSpinner BugattiDeadlineSpinner;
+    private javax.swing.JSpinner MaseratiDeadlineSpinner;
     private javax.swing.JLabel NAcceBugatti;
     private javax.swing.JLabel NAcceMaserati;
     private javax.swing.JLabel NBugatti;
@@ -1344,7 +1366,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;

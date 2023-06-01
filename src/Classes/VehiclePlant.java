@@ -48,7 +48,7 @@ public class VehiclePlant {
         this.deadlineInDays = deadlineInDays;
         
         
-        this.dayCount = 10;
+        this.dayCount = deadlineInDays;
         
         initializeWorkers();
         
