@@ -151,8 +151,8 @@ public class Menu extends javax.swing.JFrame {
                 specialVehicleMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.specialVehicle)));
                 standardVehicleMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.standardVehicle)));
                 
-                BuTimeUntilDeadline.setText(Integer.toString(BuVehiclePlant.dayCount%BuVehiclePlant.deadlineInDays));
-                MaTimeUntilDeadline.setText(Integer.toString(MaVehiclePlant.dayCount%MaVehiclePlant.deadlineInDays));    
+                BuTimeUntilDeadline.setText(Integer.toString(BugattiDeadlineInDays-BuVehiclePlant.dayCount%BuVehiclePlant.deadlineInDays));
+                MaTimeUntilDeadline.setText(Integer.toString(MaseratiDeadlineInDays-MaVehiclePlant.dayCount%MaVehiclePlant.deadlineInDays));    
                 
                 dayCount.setText(Integer.toString(BuVehiclePlant.dayCount));
                 
@@ -379,7 +379,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, 160));
 
         jLabel1.setText("Bugatti");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
 
         jLabel2.setText("Maserati");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
@@ -482,7 +482,7 @@ public class Menu extends javax.swing.JFrame {
                 StopActionPerformed(evt);
             }
         });
-        jPanel1.add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, 90, -1));
+        jPanel1.add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, 90, 20));
 
         Play.setText("Reanudar");
         Play.addActionListener(new java.awt.event.ActionListener() {
@@ -980,7 +980,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.add(Play1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
 
         jLabel106.setText("Bugatti");
-        jPanel2.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+        jPanel2.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
 
         jLabel107.setText("Maserati");
         jPanel2.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
@@ -1021,7 +1021,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel3.add(Play2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
 
         jLabel108.setText("Bugatti");
-        jPanel3.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+        jPanel3.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
 
         jLabel109.setText("Maserati");
         jPanel3.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));

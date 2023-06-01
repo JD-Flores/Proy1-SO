@@ -53,8 +53,6 @@ public class Warehouse {
                 
                 if (this.chasisQty < this.maxChasisQty) {
                     this.chasisQty += finishedPart;
-                    
-                    System.out.println("chasis: " + this.chasisQty);
                 }
                 
                 break;
@@ -68,7 +66,6 @@ public class Warehouse {
                     }
                     
                     
-                    System.out.println("ruedas: " + this.wheelsQty);
                 }
                 break;
             case "motor":
@@ -79,21 +76,19 @@ public class Warehouse {
                         this.motorQty += finishedPart;
                     }
                     
-                    System.out.println("motor: " + this.motorQty);
                 }
                 break;
             case "carroceria":
                 if (this.carroQty < this.maxCarroQty) {
                     this.carroQty += finishedPart;
-                    
-                    System.out.println("carroceria: " + this.carroQty);
+
                 }
                 break;            
             case "accesorios":
                 if (this.accesQty < this.maxAccesQty) {
                     this.accesQty += finishedPart;
                     
-                    System.out.println("accesorios: " + this.accesQty);
+
                 }
                 break;default:
                 break;
@@ -110,7 +105,7 @@ public class Warehouse {
                 this.accesQty -= needsArray[4];
                 this.specialVehicle += 1;
                 this.standardCounter = 0;
-                System.out.println("Vehiculo especial: " + this.specialVehicle);
+
             } 
         } else {
             if (checkStandardMats()) {
@@ -120,7 +115,7 @@ public class Warehouse {
                 this.wheelsQty -= needsArray[3];
                 this.standardVehicle += 1;
                 this.standardCounter +=1;
-                System.out.println("Vehiculo estandar: " + this.standardVehicle);
+
             }
         }
     }
