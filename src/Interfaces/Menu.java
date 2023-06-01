@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Classes.Functions;
+import Classes.Global;
 import Classes.VehiclePlant;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -150,6 +151,26 @@ public class Menu extends javax.swing.JFrame {
                 specialVehicleMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.specialVehicle)));
                 standardVehicleMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.standardVehicle)));
                 
+                BuTimeUntilDeadline.setText(Integer.toString(BuVehiclePlant.dayCount%BuVehiclePlant.deadlineInDays));
+                MaTimeUntilDeadline.setText(Integer.toString(MaVehiclePlant.dayCount%MaVehiclePlant.deadlineInDays));    
+                
+                dayCount.setText(Integer.toString(BuVehiclePlant.dayCount));
+                
+                BuFaltas.setText(Integer.toString(BuVehiclePlant.faltasManager));
+                MaFaltas.setText(Integer.toString(MaVehiclePlant.faltasManager));
+                
+                BuPenalty.setText(Integer.toString(BuVehiclePlant.faltasManager*50));
+                MaPenalty.setText(Integer.toString(MaVehiclePlant.faltasManager*50));
+                
+                BuWinnings.setText(Integer.toString(BuVehiclePlant.ganancias));
+                BuCosts.setText(Integer.toString(BuVehiclePlant.costos));
+                BuUtility.setText(Integer.toString(BuVehiclePlant.ganancias-BuVehiclePlant.costos));
+                
+                MaWinnings.setText(Integer.toString(MaVehiclePlant.ganancias));
+                MaCosts.setText(Integer.toString(MaVehiclePlant.costos));
+                MaUtility.setText(Integer.toString(MaVehiclePlant.ganancias-BuVehiclePlant.costos));
+                
+                
                 if (BuVehiclePlant.isManagerWorking) {
                     managerStateBLabel.setText("Trabajando");
                 } else  {
@@ -265,12 +286,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
+        dayCount = new javax.swing.JLabel();
+        MaUtility = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
+        MaTimeUntilDeadline = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         specialVehicleBCounterLabel = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
@@ -279,14 +299,14 @@ public class Menu extends javax.swing.JFrame {
         managerStateMLabel = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
+        BuTimeUntilDeadline = new javax.swing.JLabel();
+        MaFaltas = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
+        MaWinnings = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
+        MaCosts = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         chasisBCounterLabel = new javax.swing.JLabel();
@@ -319,19 +339,22 @@ public class Menu extends javax.swing.JFrame {
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
         managerStateBLabel = new javax.swing.JLabel();
-        jLabel95 = new javax.swing.JLabel();
-        jLabel96 = new javax.swing.JLabel();
+        BuFaltas = new javax.swing.JLabel();
+        BuPenalty = new javax.swing.JLabel();
         jLabel97 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
-        jLabel99 = new javax.swing.JLabel();
+        BuWinnings = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
-        jLabel101 = new javax.swing.JLabel();
+        BuCosts = new javax.swing.JLabel();
         jLabel102 = new javax.swing.JLabel();
-        jLabel103 = new javax.swing.JLabel();
+        BuUtility = new javax.swing.JLabel();
         Stop2 = new javax.swing.JButton();
         Play1 = new javax.swing.JButton();
         jLabel106 = new javax.swing.JLabel();
         jLabel107 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        MaPenalty = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel104 = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
@@ -464,7 +487,7 @@ public class Menu extends javax.swing.JFrame {
                 PlayActionPerformed(evt);
             }
         });
-        jPanel1.add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 90, -1));
+        jPanel1.add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 90, 20));
 
         BEnsamM.setText("-");
         BEnsamM.addActionListener(new java.awt.event.ActionListener() {
@@ -706,8 +729,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel17.setText("Carrocería:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 70, -1));
 
-        jLabel25.setText("Motor:");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 80, -1));
+        jLabel25.setText("Day Count:");
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 60, -1));
 
         jLabel26.setText("Ruedas:");
         jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 80, -1));
@@ -751,14 +774,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel40.setText("55");
         jPanel2.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 20, -1));
 
-        jLabel41.setText("0");
-        jPanel2.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 20, -1));
+        dayCount.setText("0");
+        jPanel2.add(dayCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 20, -1));
 
-        jLabel42.setText("0");
-        jPanel2.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, 20, -1));
-
-        jLabel43.setText("Director de la planta:");
-        jPanel2.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, -1, -1));
+        MaUtility.setText("0");
+        jPanel2.add(MaUtility, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, 80, -1));
 
         jLabel44.setText("Utilidad total:");
         jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, -1, -1));
@@ -766,8 +786,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel45.setText("10");
         jPanel2.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 20, -1));
 
-        jLabel46.setText("0");
-        jPanel2.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 20, -1));
+        MaTimeUntilDeadline.setText("0");
+        jPanel2.add(MaTimeUntilDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 20, -1));
 
         jLabel47.setText("Vehículo con accesorios:");
         jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
@@ -793,11 +813,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel54.setText("Faltas:");
         jPanel2.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, -1, -1));
 
-        jLabel55.setText("0");
-        jPanel2.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 20, -1));
+        BuTimeUntilDeadline.setText("0");
+        jPanel2.add(BuTimeUntilDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 20, -1));
 
-        jLabel56.setText("0");
-        jPanel2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 20, -1));
+        MaFaltas.setText("0");
+        jPanel2.add(MaFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 20, -1));
 
         jLabel57.setText("Vehículo estándar:");
         jPanel2.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
@@ -808,14 +828,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel59.setText("Ganancia en Bruto:");
         jPanel2.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, -1, -1));
 
-        jLabel60.setText("0");
-        jPanel2.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 20, -1));
+        MaWinnings.setText("0");
+        jPanel2.add(MaWinnings, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 80, -1));
 
         jLabel61.setText("Costro operativo:");
         jPanel2.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, -1, -1));
 
-        jLabel62.setText("0");
-        jPanel2.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 20, -1));
+        MaCosts.setText("0");
+        jPanel2.add(MaCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 80, -1));
 
         jLabel63.setText("Almacén");
         jPanel2.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
@@ -913,11 +933,11 @@ public class Menu extends javax.swing.JFrame {
         managerStateBLabel.setText("Algo");
         jPanel2.add(managerStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
 
-        jLabel95.setText("0");
-        jPanel2.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 20, -1));
+        BuFaltas.setText("0");
+        jPanel2.add(BuFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 20, -1));
 
-        jLabel96.setText("0");
-        jPanel2.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 20, -1));
+        BuPenalty.setText("0");
+        jPanel2.add(BuPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 20, -1));
 
         jLabel97.setText("Algo");
         jPanel2.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
@@ -925,20 +945,20 @@ public class Menu extends javax.swing.JFrame {
         jLabel98.setText("Ganancia en Bruto:");
         jPanel2.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
 
-        jLabel99.setText("0");
-        jPanel2.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 20, -1));
+        BuWinnings.setText("0");
+        jPanel2.add(BuWinnings, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 90, -1));
 
         jLabel100.setText("Costro operativo:");
         jPanel2.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
 
-        jLabel101.setText("0");
-        jPanel2.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 20, -1));
+        BuCosts.setText("0");
+        jPanel2.add(BuCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 90, -1));
 
         jLabel102.setText("Utilidad total:");
         jPanel2.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, -1));
 
-        jLabel103.setText("0");
-        jPanel2.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 20, -1));
+        BuUtility.setText("0");
+        jPanel2.add(BuUtility, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 90, -1));
 
         Stop2.setText("Parar");
         Stop2.addActionListener(new java.awt.event.ActionListener() {
@@ -961,6 +981,15 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel107.setText("Maserati");
         jPanel2.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
+
+        jLabel46.setText("Director de la planta:");
+        jPanel2.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, -1, -1));
+
+        MaPenalty.setText("0");
+        jPanel2.add(MaPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 20, -1));
+
+        jLabel30.setText("Motor:");
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 80, -1));
 
         jTabbedPane1.addTab("Simulación", jPanel2);
 
@@ -996,7 +1025,7 @@ public class Menu extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("    Gráficos   ", jPanel3);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 823, 570));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1029,7 +1058,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_StartActionPerformed
 
     private void StopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopActionPerformed
-        // TODO add your handling code here:
+        Global.play = false;
     }//GEN-LAST:event_StopActionPerformed
 
     private void SChasisBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SChasisBActionPerformed
@@ -1228,23 +1257,23 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_BEnsamBActionPerformed
 
     private void Stop1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stop1ActionPerformed
-        // TODO add your handling code here:
+        Global.play = false;
     }//GEN-LAST:event_Stop1ActionPerformed
 
     private void Stop2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stop2ActionPerformed
-        // TODO add your handling code here:
+        Global.play = false;
     }//GEN-LAST:event_Stop2ActionPerformed
 
     private void Play1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Play1ActionPerformed
-        // TODO add your handling code here:
+        Global.play = true;
     }//GEN-LAST:event_Play1ActionPerformed
 
     private void Play2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Play2ActionPerformed
-        // TODO add your handling code here:
+        Global.play = true;
     }//GEN-LAST:event_Play2ActionPerformed
 
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
-        // TODO add your handling code here:
+        Global.play = true;
     }//GEN-LAST:event_PlayActionPerformed
 
     /**
@@ -1295,7 +1324,19 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton BMotorM;
     private javax.swing.JButton BRuedasB;
     private javax.swing.JButton BRuedasM;
+    private javax.swing.JLabel BuCosts;
+    private javax.swing.JLabel BuFaltas;
+    private javax.swing.JLabel BuPenalty;
+    private javax.swing.JLabel BuTimeUntilDeadline;
+    private javax.swing.JLabel BuUtility;
+    private javax.swing.JLabel BuWinnings;
     private javax.swing.JSpinner BugattiDeadlineSpinner;
+    private javax.swing.JLabel MaCosts;
+    private javax.swing.JLabel MaFaltas;
+    private javax.swing.JLabel MaPenalty;
+    private javax.swing.JLabel MaTimeUntilDeadline;
+    private javax.swing.JLabel MaUtility;
+    private javax.swing.JLabel MaWinnings;
     private javax.swing.JSpinner MaseratiDeadlineSpinner;
     private javax.swing.JLabel NAcceBugatti;
     private javax.swing.JLabel NAcceMaserati;
@@ -1336,13 +1377,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel carroMCounterLabel;
     private javax.swing.JLabel chasisBCounterLabel;
     private javax.swing.JLabel chasisMCounterLabel;
+    private javax.swing.JLabel dayCount;
     private javax.swing.JSpinner dayDurationSpinner;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
@@ -1370,6 +1410,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -1379,9 +1420,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
@@ -1392,15 +1430,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel66;
@@ -1427,11 +1461,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
