@@ -47,121 +47,104 @@ public class Worker extends Thread{
         if (this.type.equals("manager")) {
             
             while (true) {
-                                while (Global.play) {
-                    int count = 0;
-                    while (count < 32) {
-
-                        try {
-                            sleep( (int) this.dayDurationInMs / 48);
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                        if(plant.isManagerWorking) {
-                            plant.isManagerWorking = false;
-                        } else {
-                            plant.isManagerWorking = true;
-                        }
-                        count++;
-                    }
+                int count = 0;
+                while (count < 32) {
+                    
                     try {
-                        sleep(this.dayDurationInMs/3);
+                        sleep( (int) this.dayDurationInMs / 48);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    payCheck();
-                    if(plant.dayCount>0){
-                        plant.dayCount++;
-                    } 
-
-
+                    if(plant.isManagerWorking) {
+                        plant.isManagerWorking = false;
+                    } else {
+                        plant.isManagerWorking = true;
+                    }
+                    count++;
                 }
                 try {
-                    sleep(this.dayDurationInMs);
+                    sleep(this.dayDurationInMs/3);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                payCheck();
+                if(plant.dayCount>0){
+                    plant.dayCount--;
+                } 
+               
+                System.out.println("manager cobró y faltan "+plant.dayCount+" para la entrega");
+                
             }
-
             
             
         } else if (this.type.equals("director")){
             
-            while (true) {
-                while(Global.play) {
-                    if(plant.dayCount % plant.deadlineInDays == 0) {
+            while(true) {
+                if(plant.dayCount == 0) {
+                    try {
+                        state = "Enviando al concesionario";
+                        sellVehicles();
+                        sleep(this.dayDurationInMs);
+                        plant.dayCount = plant.deadlineInDays;
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    state = "Labores administrativas";
+                    Random random = new Random();
+                    int randomTime = random.nextInt((int) this.dayDurationInMs);
+                    try {
+                        sleep(randomTime);
+                        state = "Revisando al gerente";
+                        System.out.println(this.plant.getName()+" Tiempo random: "+randomTime);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    System.out.println(this.plant.getName()+" 25 min: "+this.dayDurationInMs*25/(60*24));
+                    if(!plant.isManagerWorking) {
+                        punishManager();
+                        System.out.println("se ha penalizado al manager");
                         try {
-                            state = "Enviando al concesionario";
-                            sellVehicles();
-                            sleep(this.dayDurationInMs);
-
-                            plant.dayCount = plant.deadlineInDays;
+                            sleep(this.dayDurationInMs*25/(60*24));
                         } catch (InterruptedException ex) {
                             Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     } else {
-                        state = "Labores administrativas";
-                        Random random = new Random();
-                        int randomTime = random.nextInt((int) this.dayDurationInMs);
                         try {
-                            sleep(randomTime);
-                            state = "Revisando al gerente";
+                            sleep(this.dayDurationInMs*25/(60*24));
                         } catch (InterruptedException ex) {
                             Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        if(!plant.isManagerWorking) {
+                        if (!plant.isManagerWorking) {
                             punishManager();
-                            try {
-                                sleep(this.dayDurationInMs*25/(60*24));
-                            } catch (InterruptedException ex) {
-                                Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-                        } else {
-                            try {
-                                sleep(this.dayDurationInMs*25/(60*24));
-                            } catch (InterruptedException ex) {
-                                Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-                            if (!plant.isManagerWorking) {
-                                punishManager();
-                            }
-                        }
-                        try {
-                            sleep(this.dayDurationInMs-randomTime);
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+                            System.out.println("se ha penalizado al manager");
                         }
                     }
-                    payCheck();
-                }
-                try {
-                    sleep(this.dayDurationInMs);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-
-
-            
-        } else {
-            while(true) {
-                while(Global.play) {
                     try {
-
-                        payCheck();
-                        produceForTheDay();
-                        sleep(this.dayDurationInMs);
-
+                        state = "Labores administrativas";
+                        sleep(this.dayDurationInMs-randomTime-this.dayDurationInMs*25/(60*24));
+                        System.out.println(this.plant.getName()+" Tiempo resto del dia: "+(this.dayDurationInMs-randomTime-this.dayDurationInMs*25/(60*24)));
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
+                payCheck();
+                System.out.println("Director cobró");
+            }
+            
+        } else {
+            while(true) {
+                
                 try {
+
+                    payCheck();
+                    produceForTheDay();
                     sleep(this.dayDurationInMs);
+            
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-
         }
         
 
@@ -205,7 +188,6 @@ public class Worker extends Thread{
     
     public void punishManager() {
         plant.manager.accSalary -= 50;
-        plant.costos -= 50;
         plant.faltasManager ++;
     }
     
