@@ -27,12 +27,16 @@ public class Menu extends javax.swing.JFrame {
     //León Serpa - Bugatti - Ult. num. carnet: 5
     float[] BugattiProductionArray = {(float)0.34, (float)0.34, 2, 5, (float)0.5, (float)0.5};
     int[] BugattiAssemblyNeeds = {2,1,4,4,2};
+    int[] BugattiPricesArray = {550000, 600000};
     
     String MaseratiData = func.readMaseratiData();
     int[] MaseratiArray = func.transformMaseratiData(MaseratiData);
     //Juan Flores - Maserati - Ult. num. carnet: 7
     float[] MaseratiProductionArray = {(float)0.25, (float)0.25, 1, 5, (float)0.5, (float)0.5};
     int[] MaseratiAssemblyNeeds = {1,1,2,4,3};
+    int[] MaseratiPricesArray = {350000,700000};
+    
+    int dayDurationInMs = func.readDayDurationData();
     
     int chasisB;
     int carroB;
@@ -54,6 +58,9 @@ public class Menu extends javax.swing.JFrame {
     
     int[] BugattiStartArray = new int[6];
     int[] MaseratiStartArray = new int[6];
+    
+    int BugattiDeadlineInDays;
+    int MaseratiDeadlineInDays;
     
     VehiclePlant BuVehiclePlant;
     VehiclePlant MaVehiclePlant;
@@ -113,11 +120,13 @@ public class Menu extends javax.swing.JFrame {
         this.ensamM = Integer.parseInt(NEnsamM.getText());
         this.maxM = Integer.parseInt(NMaserati.getText());
         
+        this.dayDurationSpinner.setValue(dayDurationInMs);
+        
         
     }
     
     private void startTimer() {
-        int delay = 500; // milliseconds
+        int delay = 10; // milliseconds
         ActionListener taskPerformer = new ActionListener() {
            public void actionPerformed(ActionEvent evt) {
                 chasisBCounterLabel.setText(Integer.toString((int)Math.floor(BuVehiclePlant.warehouse.chasisQty)));
@@ -135,6 +144,19 @@ public class Menu extends javax.swing.JFrame {
                 accesMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.accesQty)));
                 specialVehicleMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.specialVehicle)));
                 standardVehicleMCounterLabel.setText(Integer.toString((int)Math.floor(MaVehiclePlant.warehouse.standardVehicle)));
+                
+                if (BuVehiclePlant.isManagerWorking) {
+                    managerStateBLabel.setText("Trabajando");
+                } else  {
+                    managerStateBLabel.setText("Viendo carreras");
+                }
+                
+                if (MaVehiclePlant.isManagerWorking) {
+                    managerStateMLabel.setText("Trabajando");
+                }else{
+                    managerStateMLabel.setText("Viendo carreras");
+                }
+                
            }
         };
       new javax.swing.Timer(delay, taskPerformer).start();
@@ -210,8 +232,8 @@ public class Menu extends javax.swing.JFrame {
         NEnsamB = new javax.swing.JLabel();
         SEnsamB = new javax.swing.JButton();
         BEnsamB = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
+        dayDurationSpinner = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -245,7 +267,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
+        managerStateMLabel = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
@@ -287,7 +309,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel91 = new javax.swing.JLabel();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
-        jLabel94 = new javax.swing.JLabel();
+        managerStateBLabel = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
         jLabel96 = new javax.swing.JLabel();
         jLabel97 = new javax.swing.JLabel();
@@ -641,15 +663,9 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(BEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 50, 20));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 80, 20));
-
         jLabel28.setText("Duración del día (en ms):");
         jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 150, -1));
+        jPanel1.add(dayDurationSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 100, -1));
 
         jTabbedPane1.addTab("Configuración", jPanel1);
 
@@ -751,8 +767,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel51.setText("Algo");
         jPanel2.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
 
-        jLabel52.setText("Algo");
-        jPanel2.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
+        managerStateMLabel.setText("Algo");
+        jPanel2.add(managerStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
 
         jLabel53.setText("Gerente de operaciones:");
         jPanel2.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, -1, -1));
@@ -877,8 +893,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel93.setText("Director de la planta:");
         jPanel2.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
-        jLabel94.setText("Algo");
-        jPanel2.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
+        managerStateBLabel.setText("Algo");
+        jPanel2.add(managerStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
 
         jLabel95.setText("0");
         jPanel2.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 20, -1));
@@ -969,6 +985,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
+        dayDurationInMs = (int) dayDurationSpinner.getValue();
+        
         BugattiStartArray[0] = chasisB;
         BugattiStartArray[1] = carroB;
         BugattiStartArray[2] = motorB;
@@ -976,7 +994,7 @@ public class Menu extends javax.swing.JFrame {
         BugattiStartArray[4] = acceB;
         BugattiStartArray[5] = ensamB;
 
-        BuVehiclePlant = new VehiclePlant("Bugatti", 15, 500, BugattiStartArray, BugattiProductionArray, BugattiAssemblyNeeds);
+        BuVehiclePlant = new VehiclePlant("Bugatti", 15, dayDurationInMs, BugattiStartArray, BugattiProductionArray, BugattiAssemblyNeeds, BugattiPricesArray, BugattiDeadlineInDays);
         
         MaseratiStartArray[0] = chasisM;
         MaseratiStartArray[1] = carroM;
@@ -985,7 +1003,7 @@ public class Menu extends javax.swing.JFrame {
         MaseratiStartArray[4] = acceM;
         MaseratiStartArray[5] = ensamM;
 
-        MaVehiclePlant = new VehiclePlant("Maserati", 17, 500, MaseratiStartArray, MaseratiProductionArray, MaseratiAssemblyNeeds);
+        MaVehiclePlant = new VehiclePlant("Maserati", 17, dayDurationInMs, MaseratiStartArray, MaseratiProductionArray, MaseratiAssemblyNeeds, BugattiPricesArray, MaseratiDeadlineInDays);
         startTimer();
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_StartActionPerformed
@@ -1189,10 +1207,6 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BEnsamBActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void Stop1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stop1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Stop1ActionPerformed
@@ -1300,6 +1314,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel carroMCounterLabel;
     private javax.swing.JLabel chasisBCounterLabel;
     private javax.swing.JLabel chasisMCounterLabel;
+    private javax.swing.JSpinner dayDurationSpinner;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -1351,7 +1366,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
@@ -1389,7 +1403,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
@@ -1399,7 +1412,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel managerStateBLabel;
+    private javax.swing.JLabel managerStateMLabel;
     private javax.swing.JLabel motorBCounterLabel;
     private javax.swing.JLabel motorMCounterLabel;
     private javax.swing.JLabel ruedasBCounterLabel;

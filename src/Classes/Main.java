@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
         
-        Functions func = new Functions();
+        /*Functions func = new Functions();
         String BugattiData = func.readBugattiData();
-        JOptionPane.showMessageDialog(null, BugattiData); 
+        JOptionPane.showMessageDialog(null, BugattiData); */
         
         Menu menu = new Menu();
 

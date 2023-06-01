@@ -29,9 +29,11 @@ public class VehiclePlant {
     public int ganancias;
     private int salary;
     private String type;
+    public int[] pricesArray;
+    public int deadlineInDays;
     
     
-    public VehiclePlant (String name, int maxWorkers, long dayDuration, int[] workerArray, float[] productionArray, int[] needsArray) {
+    public VehiclePlant (String name, int maxWorkers, long dayDuration, int[] workerArray, float[] productionArray, int[] needsArray, int[] pricesArray, int deadlineInDays) {
         this.name = name;
         this.maxWorkerQty = maxWorkers;
         this.dayDurationInMs = dayDuration;
@@ -42,6 +44,8 @@ public class VehiclePlant {
         this.productionArray = productionArray;
         this.isManagerWorking = true;
         this.faltasManager = 0;
+        this.pricesArray = pricesArray;
+        this.deadlineInDays = deadlineInDays;
         
         
         this.dayCount = 10;
@@ -64,58 +68,14 @@ public class VehiclePlant {
     
     
     
-    public void initializeWorkers(){
-        /*for (int i = 0; i<6; i++){
-            for (int j = 0; j<workerArray[i]; j++) {
-                if (name.equals("Bugatti")) {
-                    //León Serpa: ultimo numero de carnet: 5
-                    if (i == 0) {
-                        Worker worker = new Worker(productionArray[i], 10, dayDurationInMs, "chasis", this);
-                        worker.start();
-                        workers[i] = worker;
-                    }
-                    else if (i == 1) {
-                        Worker worker = new Worker((float) 0.34, 13, dayDurationInMs, "carroceria", this);
-                        worker.start();
-                        workers[i] = worker;
-                    }
-                    else if (i == 2) {
-                        Worker worker = new Worker((float) 2, 20, dayDurationInMs, "motor", this);
-                        worker.start();
-                        workers[i] = worker;
-                    }
-                    else if (i == 3) {
-                        Worker worker = new Worker((float) 5, 8, dayDurationInMs, "ruedas", this);
-                        worker.start();
-                        workers[i] = worker;
-                    }
-                    else if (i == 4) {
-                        Worker worker = new Worker((float) 0.5, 17, dayDurationInMs, "accesorios", this);
-                        worker.start();
-                        workers[i] = worker;
-                    }
-                    else if (i == 5) {
-                        Worker worker = new Worker((float) 0.5, 25, dayDurationInMs, "ensamblador", this);
-                        worker.start();
-                        workers[i] = worker;
-                    }
-
-                } else {
-                    
-                    // código de Maserati, depende del ultimo numero de tu carnet
-                }
-                
-                
-            }
-        }
-        
+    public void initializeWorkers(){        
         Worker manager = new Worker ((float) 1, 20, dayDurationInMs, "manager", this);
         manager.start();
         this.manager = manager;
         
         Worker director = new Worker ((float) 1, 30, dayDurationInMs, "director", this);
         director.start();
-        this.director = director;*/
+        this.director = director;
         
         for (int i = 0; i<6; i++){
             for (int j = 0; j<workerArray[i]; j++) {

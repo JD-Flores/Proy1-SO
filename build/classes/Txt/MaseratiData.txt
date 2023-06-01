@@ -5,3 +5,4 @@ Creadores de motores: 1
 Creadores de ruedas: 1
 Creadores de accesorios: 1
 Ensambladores: 1
+Deadline: 30

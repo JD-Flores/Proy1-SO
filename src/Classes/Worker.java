@@ -185,14 +185,10 @@ public class Worker extends Thread{
     }
     
     public void sellVehicles(){
-        if (plant.getName().equals("Bugatti")){
-            plant.ganancias += plant.warehouse.standardVehicle*550000;
-            plant.warehouse.standardVehicle = 0;
-            plant.ganancias += plant.warehouse.specialVehicle*600000;
-            plant.warehouse.standardVehicle = 0;
-        } else {
-            
-        }
+        plant.ganancias += plant.warehouse.standardVehicle*plant.pricesArray[0];
+        plant.warehouse.standardVehicle = 0;
+        plant.ganancias += plant.warehouse.specialVehicle*plant.pricesArray[1];
+        plant.warehouse.specialVehicle = 0;
     }
 
     public float getProductionCounter() {

@@ -118,4 +118,29 @@ public class Functions {
         
         
     }
+    
+    public int readDayDurationData() {
+        String contenido_txt = "";
+        String line;
+        File file = new File("Src\\Txt\\dayDuration.txt");
+        try {
+            if (!file.exists()){
+                file.createNewFile();
+            } else {
+                FileReader fr = new FileReader(file);
+                try (BufferedReader br = new BufferedReader(fr)) {
+                    if (((line = br.readLine()) != null) && !line.isEmpty()) {
+                        contenido_txt += line;
+                    }
+                }
+              
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+ 
+        contenido_txt = contenido_txt.split(" ")[1];
+        return Integer.parseInt(contenido_txt);
+        
+    }
 }
