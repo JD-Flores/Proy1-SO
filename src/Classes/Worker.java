@@ -23,6 +23,7 @@ public class Worker extends Thread{
     private String type;
     private float productionCounter;
     private VehiclePlant plant;
+    private String state;
     
     
     public Worker(float productionPerDay, float salary, long dayDuration, String type, VehiclePlant plant) {
@@ -81,18 +82,20 @@ public class Worker extends Thread{
             while(true) {
                 if(plant.dayCount == 0) {
                     try {
+                        state = "Enviando al concesionario";
                         sellVehicles();
                         sleep(this.dayDurationInMs);
-                       
                         plant.dayCount = plant.deadlineInDays;
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
+                    state = "Labores administrativas";
                     Random random = new Random();
                     int randomTime = random.nextInt((int) this.dayDurationInMs);
                     try {
                         sleep(randomTime);
+                        state = "Revisando al gerente";
                         System.out.println(this.plant.getName()+" Tiempo random: "+randomTime);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
@@ -118,6 +121,7 @@ public class Worker extends Thread{
                         }
                     }
                     try {
+                        state = "Labores administrativas";
                         sleep(this.dayDurationInMs-randomTime-this.dayDurationInMs*25/(60*24));
                         System.out.println(this.plant.getName()+" Tiempo resto del dia: "+(this.dayDurationInMs-randomTime-this.dayDurationInMs*25/(60*24)));
                     } catch (InterruptedException ex) {
@@ -201,6 +205,9 @@ public class Worker extends Thread{
     public void setProductionCounter(float productionCounter) {
         this.productionCounter = productionCounter;
     }
-    
+
+    public String getEstado() {
+        return state;
+    }
     
 }
