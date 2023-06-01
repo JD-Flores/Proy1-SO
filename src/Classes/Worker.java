@@ -23,6 +23,7 @@ public class Worker extends Thread{
     private String type;
     private float productionCounter;
     private VehiclePlant plant;
+    public String state;
     
     
     public Worker(float productionPerDay, float salary, long dayDuration, String type, VehiclePlant plant) {
@@ -89,6 +90,7 @@ public class Worker extends Thread{
                 while(Global.play) {
                     if(plant.dayCount % plant.deadlineInDays == 0) {
                         try {
+                            state = "Enviando vehículos";
                             sellVehicles();
                             sleep(this.dayDurationInMs);
 
@@ -99,11 +101,13 @@ public class Worker extends Thread{
                     } else {
                         Random random = new Random();
                         int randomTime = random.nextInt((int) this.dayDurationInMs);
+                        state = "Labores administrativas";
                         try {
                             sleep(randomTime);
                         } catch (InterruptedException ex) {
                             Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
                         }
+                        state = "Revisando al gerente";
                         if(!plant.isManagerWorking) {
                             punishManager();
                             try {
@@ -121,6 +125,8 @@ public class Worker extends Thread{
                                 punishManager();
                             }
                         }
+                        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                        state = "Labores administrativas";
                         try {
                             sleep(this.dayDurationInMs-randomTime);
                         } catch (InterruptedException ex) {

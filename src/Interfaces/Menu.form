@@ -1109,7 +1109,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel51">
+            <Component class="javax.swing.JLabel" name="directorStateMLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Algo"/>
               </Properties>
@@ -1569,7 +1569,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel97">
+            <Component class="javax.swing.JLabel" name="directorStateBLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Algo"/>
               </Properties>

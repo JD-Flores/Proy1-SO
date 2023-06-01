@@ -183,6 +183,9 @@ public class Menu extends javax.swing.JFrame {
                     managerStateMLabel.setText("Viendo carreras");
                 }
                 
+                directorStateBLabel.setText(BuVehiclePlant.director.state);
+                directorStateMLabel.setText(MaVehiclePlant.director.state);
+                
            }
         };
       new javax.swing.Timer(delay, taskPerformer).start();
@@ -295,7 +298,7 @@ public class Menu extends javax.swing.JFrame {
         specialVehicleBCounterLabel = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
+        directorStateMLabel = new javax.swing.JLabel();
         managerStateMLabel = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
@@ -341,7 +344,7 @@ public class Menu extends javax.swing.JFrame {
         managerStateBLabel = new javax.swing.JLabel();
         BuFaltas = new javax.swing.JLabel();
         BuPenalty = new javax.swing.JLabel();
-        jLabel97 = new javax.swing.JLabel();
+        directorStateBLabel = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
         BuWinnings = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
@@ -801,8 +804,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel50.setText("Dinero descontado: ");
         jPanel2.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, -1, -1));
 
-        jLabel51.setText("Algo");
-        jPanel2.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
+        directorStateMLabel.setText("Algo");
+        jPanel2.add(directorStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
 
         managerStateMLabel.setText("Algo");
         jPanel2.add(managerStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
@@ -939,8 +942,8 @@ public class Menu extends javax.swing.JFrame {
         BuPenalty.setText("0");
         jPanel2.add(BuPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 20, -1));
 
-        jLabel97.setText("Algo");
-        jPanel2.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
+        directorStateBLabel.setText("Algo");
+        jPanel2.add(directorStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
 
         jLabel98.setText("Ganancia en Bruto:");
         jPanel2.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
@@ -1379,6 +1382,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel chasisMCounterLabel;
     private javax.swing.JLabel dayCount;
     private javax.swing.JSpinner dayDurationSpinner;
+    private javax.swing.JLabel directorStateBLabel;
+    private javax.swing.JLabel directorStateMLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -1427,7 +1432,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel57;
@@ -1461,7 +1465,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
