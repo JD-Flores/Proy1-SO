@@ -73,6 +73,10 @@ public class Menu extends javax.swing.JFrame {
     VehiclePlant BuVehiclePlant;
     VehiclePlant MaVehiclePlant;
     
+    public void Guardar(){
+        func.GuardarDatos(NChasisBugatti.getText(), NCarroBugatti.getText(), NMotorBugatti.getText(), NRuedasBugatti.getText(), NAcceBugatti.getText(), NEnsamB.getText(), Integer.toString((int) BugattiDeadlineSpinner.getValue()), NChasisMaserati.getText(), NCarroMaserati.getText(), NMotorMaserati.getText(), NRuedasMaserati.getText(), NAcceMaserati.getText(), NEnsamM.getText(), Integer.toString((int) MaseratiDeadlineSpinner.getValue()), Integer.toString((int) dayDurationSpinner.getValue()));
+    }
+    
     
     public Menu() {
         initComponents();
@@ -287,10 +291,6 @@ public class Menu extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         NEnsamM = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -352,8 +352,13 @@ public class Menu extends javax.swing.JFrame {
         MaseratiDeadlineSpinner = new javax.swing.JSpinner();
         jLabel29 = new javax.swing.JLabel();
         BugattiDeadlineSpinner = new javax.swing.JSpinner();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -438,11 +443,12 @@ public class Menu extends javax.swing.JFrame {
         BuUtility = new javax.swing.JLabel();
         Stop2 = new javax.swing.JButton();
         Play1 = new javax.swing.JButton();
-        jLabel106 = new javax.swing.JLabel();
-        jLabel107 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         MaPenalty = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel104 = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
@@ -451,6 +457,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel108 = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -458,109 +466,133 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BugattiLogo.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 120));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MaseratiLogo.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, 160));
-
-        jLabel1.setText("Bugatti");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
-
-        jLabel2.setText("Maserati");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
-
+        jLabel5.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         jLabel5.setText("Numero de trabajadores:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 160, -1));
 
+        NEnsamM.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         NEnsamM.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NEnsamM.setText("1");
         jPanel1.add(NEnsamM, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 20, -1));
 
+        jLabel7.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         jLabel7.setText("Creadores de accesorios:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 150, -1));
 
+        jLabel8.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(240, 240, 240));
         jLabel8.setText("Numero de trabajadores:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 160, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 180, -1));
 
+        jLabel9.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         jLabel9.setText("Creadores de chasis:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 140, -1));
 
+        jLabel10.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         jLabel10.setText("Creador de carrocería:");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 140, -1));
 
+        jLabel11.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         jLabel11.setText("Creadores de motor: ");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 140, -1));
 
+        jLabel12.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         jLabel12.setText("Creadores de ruedas:");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 140, -1));
 
+        NMaserati.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         NMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NMaserati.setText("17");
         jPanel1.add(NMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 20, -1));
 
+        NAcceMaserati.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         NAcceMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NAcceMaserati.setText("1");
         jPanel1.add(NAcceMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 20, -1));
 
+        NCarroBugatti.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        NCarroBugatti.setForeground(new java.awt.Color(240, 240, 240));
         NCarroBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NCarroBugatti.setText("1");
-        jPanel1.add(NCarroBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 20, -1));
+        jPanel1.add(NCarroBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 20, -1));
 
+        NMotorBugatti.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        NMotorBugatti.setForeground(new java.awt.Color(240, 240, 240));
         NMotorBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NMotorBugatti.setText("1");
-        jPanel1.add(NMotorBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 20, -1));
+        jPanel1.add(NMotorBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 20, -1));
 
+        NRuedasBugatti.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        NRuedasBugatti.setForeground(new java.awt.Color(240, 240, 240));
         NRuedasBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NRuedasBugatti.setText("1");
-        jPanel1.add(NRuedasBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 20, -1));
+        jPanel1.add(NRuedasBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 20, -1));
 
+        jLabel18.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(240, 240, 240));
         jLabel18.setText("Creadores de chasis:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 130, -1));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 150, -1));
 
+        jLabel19.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(240, 240, 240));
         jLabel19.setText("Creador de carrocería:");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 130, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 150, -1));
 
+        jLabel20.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(240, 240, 240));
         jLabel20.setText("Creadores de motor: ");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 130, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 150, -1));
 
+        jLabel21.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(240, 240, 240));
         jLabel21.setText("Creadores de ruedas:");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 130, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 150, -1));
 
+        jLabel22.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         jLabel22.setText("Ensambladores:");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 120, -1));
 
+        NBugatti.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        NBugatti.setForeground(new java.awt.Color(240, 240, 240));
         NBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NBugatti.setText("15");
-        jPanel1.add(NBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 20, -1));
+        jPanel1.add(NBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 20, -1));
 
+        NChasisBugatti.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        NChasisBugatti.setForeground(new java.awt.Color(240, 240, 240));
         NChasisBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NChasisBugatti.setText("1");
-        jPanel1.add(NChasisBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 20, -1));
+        jPanel1.add(NChasisBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 20, -1));
 
+        NChasisMaserati.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         NChasisMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NChasisMaserati.setText("1");
         jPanel1.add(NChasisMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 20, -1));
 
+        NCarroMaserati.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         NCarroMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NCarroMaserati.setText("1");
         jPanel1.add(NCarroMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 20, -1));
 
+        NMotorMaserati.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         NMotorMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NMotorMaserati.setText("1");
         jPanel1.add(NMotorMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 20, -1));
 
+        NRuedasMaserati.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         NRuedasMaserati.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NRuedasMaserati.setText("1");
         jPanel1.add(NRuedasMaserati, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 330, 20, -1));
 
+        Start.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        Start.setForeground(new java.awt.Color(51, 51, 51));
         Start.setText("Comenzar Simulación");
         Start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StartActionPerformed(evt);
             }
         });
-        jPanel1.add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 170, 50));
+        jPanel1.add(Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 220, 50));
 
         Stop.setText("Parar");
         Stop.addActionListener(new java.awt.event.ActionListener() {
@@ -568,7 +600,7 @@ public class Menu extends javax.swing.JFrame {
                 StopActionPerformed(evt);
             }
         });
-        jPanel1.add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, 90, 20));
+        jPanel1.add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 490, 90, 20));
 
         Play.setText("Reanudar");
         Play.addActionListener(new java.awt.event.ActionListener() {
@@ -576,7 +608,7 @@ public class Menu extends javax.swing.JFrame {
                 PlayActionPerformed(evt);
             }
         });
-        jPanel1.add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 90, 20));
+        jPanel1.add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 90, 20));
 
         BEnsamM.setText("-");
         BEnsamM.addActionListener(new java.awt.event.ActionListener() {
@@ -600,7 +632,7 @@ public class Menu extends javax.swing.JFrame {
                 BChasisBActionPerformed(evt);
             }
         });
-        jPanel1.add(BChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 50, 20));
+        jPanel1.add(BChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 50, 20));
 
         BCarroB.setText("-");
         BCarroB.addActionListener(new java.awt.event.ActionListener() {
@@ -608,7 +640,7 @@ public class Menu extends javax.swing.JFrame {
                 BCarroBActionPerformed(evt);
             }
         });
-        jPanel1.add(BCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 50, 20));
+        jPanel1.add(BCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 50, 20));
 
         SCarroB.setText("+");
         SCarroB.addActionListener(new java.awt.event.ActionListener() {
@@ -616,7 +648,7 @@ public class Menu extends javax.swing.JFrame {
                 SCarroBActionPerformed(evt);
             }
         });
-        jPanel1.add(SCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 50, 20));
+        jPanel1.add(SCarroB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 50, 20));
 
         SMotorB.setText("+");
         SMotorB.addActionListener(new java.awt.event.ActionListener() {
@@ -624,7 +656,7 @@ public class Menu extends javax.swing.JFrame {
                 SMotorBActionPerformed(evt);
             }
         });
-        jPanel1.add(SMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 50, 20));
+        jPanel1.add(SMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 50, 20));
 
         BMotorB.setText("-");
         BMotorB.addActionListener(new java.awt.event.ActionListener() {
@@ -632,7 +664,7 @@ public class Menu extends javax.swing.JFrame {
                 BMotorBActionPerformed(evt);
             }
         });
-        jPanel1.add(BMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 50, 20));
+        jPanel1.add(BMotorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 50, 20));
 
         SRuedasB.setText("+");
         SRuedasB.addActionListener(new java.awt.event.ActionListener() {
@@ -640,7 +672,7 @@ public class Menu extends javax.swing.JFrame {
                 SRuedasBActionPerformed(evt);
             }
         });
-        jPanel1.add(SRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 50, 20));
+        jPanel1.add(SRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 50, 20));
 
         BRuedasB.setText("-");
         BRuedasB.addActionListener(new java.awt.event.ActionListener() {
@@ -648,7 +680,7 @@ public class Menu extends javax.swing.JFrame {
                 BRuedasBActionPerformed(evt);
             }
         });
-        jPanel1.add(BRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 50, 20));
+        jPanel1.add(BRuedasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 50, 20));
 
         SEnsamM.setText("+");
         SEnsamM.addActionListener(new java.awt.event.ActionListener() {
@@ -664,7 +696,7 @@ public class Menu extends javax.swing.JFrame {
                 SChasisBActionPerformed(evt);
             }
         });
-        jPanel1.add(SChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 50, 20));
+        jPanel1.add(SChasisB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 50, 20));
 
         SChasisM.setText("+");
         SChasisM.addActionListener(new java.awt.event.ActionListener() {
@@ -738,12 +770,16 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(SAcceM, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 360, 50, 20));
 
+        jLabel23.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(240, 240, 240));
         jLabel23.setText("Creadores de accesorios:");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 150, -1));
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 170, -1));
 
+        NAcceBugatti.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        NAcceBugatti.setForeground(new java.awt.Color(240, 240, 240));
         NAcceBugatti.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NAcceBugatti.setText("1");
-        jPanel1.add(NAcceBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 20, -1));
+        jPanel1.add(NAcceBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 20, -1));
 
         SAcceB.setText("+");
         SAcceB.addActionListener(new java.awt.event.ActionListener() {
@@ -751,7 +787,7 @@ public class Menu extends javax.swing.JFrame {
                 SAcceBActionPerformed(evt);
             }
         });
-        jPanel1.add(SAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 50, 20));
+        jPanel1.add(SAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 50, 20));
 
         BAcceB.setText("-");
         BAcceB.addActionListener(new java.awt.event.ActionListener() {
@@ -759,14 +795,18 @@ public class Menu extends javax.swing.JFrame {
                 BAcceBActionPerformed(evt);
             }
         });
-        jPanel1.add(BAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 50, 20));
+        jPanel1.add(BAcceB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 50, 20));
 
+        jLabel24.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(240, 240, 240));
         jLabel24.setText("Ensambladores:");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 110, -1));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 130, -1));
 
+        NEnsamB.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        NEnsamB.setForeground(new java.awt.Color(240, 240, 240));
         NEnsamB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         NEnsamB.setText("1");
-        jPanel1.add(NEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 20, -1));
+        jPanel1.add(NEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 20, -1));
 
         SEnsamB.setText("+");
         SEnsamB.addActionListener(new java.awt.event.ActionListener() {
@@ -774,7 +814,7 @@ public class Menu extends javax.swing.JFrame {
                 SEnsamBActionPerformed(evt);
             }
         });
-        jPanel1.add(SEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 50, 20));
+        jPanel1.add(SEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 50, 20));
 
         BEnsamB.setText("-");
         BEnsamB.addActionListener(new java.awt.event.ActionListener() {
@@ -782,272 +822,415 @@ public class Menu extends javax.swing.JFrame {
                 BEnsamBActionPerformed(evt);
             }
         });
-        jPanel1.add(BEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 50, 20));
+        jPanel1.add(BEnsamB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 50, 20));
 
+        jLabel28.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(240, 240, 240));
         jLabel28.setText("Duración del día (en ms):");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 150, -1));
-        jPanel1.add(dayDurationSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 100, -1));
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 160, -1));
+        jPanel1.add(dayDurationSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 100, -1));
 
+        jLabel27.setFont(new java.awt.Font("Eras Bold ITC", 0, 10)); // NOI18N
         jLabel27.setText("Deadline:");
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
+        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 430, 80, -1));
         jPanel1.add(MaseratiDeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 80, -1));
 
+        jLabel29.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(240, 240, 240));
         jLabel29.setText("Deadline:");
-        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, -1, -1));
-        jPanel1.add(BugattiDeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 80, -1));
+        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 430, 70, -1));
+        jPanel1.add(BugattiDeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 80, -1));
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/rsz_1bugattilogo.png"))); // NOI18N
+        jPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 190, 80));
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/rsz_1maseratilogo.png"))); // NOI18N
+        jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, -16, 160, 210));
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/rsz_bugatticar.png"))); // NOI18N
+        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 310, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/rsz_2rsz_rsz_2rsz_1maseraticar.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 360, 220));
+
+        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, -10, 450, 600));
+
+        jPanel5.setBackground(new java.awt.Color(211, 60, 60));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 440, 600));
 
         jTabbedPane1.addTab("Configuración", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BugattiLogo.png"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 120));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/rsz_1maseratilogo.png"))); // NOI18N
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 160));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MaseratiLogo.png"))); // NOI18N
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, 160));
-
+        jLabel14.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel14.setText("Almacén");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 200, 80, -1));
 
+        jLabel15.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel15.setText("Accesorios:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 80, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 100, -1));
 
+        jLabel16.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(240, 240, 240));
         jLabel16.setText("Max:");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 40, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 60, -1));
 
+        jLabel17.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel17.setText("Carrocería:");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 70, -1));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 90, -1));
 
+        jLabel25.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(51, 51, 51));
         jLabel25.setText("Day Count:");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 60, -1));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 80, -1));
 
+        jLabel26.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel26.setText("Ruedas:");
-        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 80, -1));
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 100, -1));
 
+        accesBCounterLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        accesBCounterLabel.setForeground(new java.awt.Color(240, 240, 240));
         accesBCounterLabel.setText("0");
-        jPanel2.add(accesBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 20, -1));
+        jPanel2.add(accesBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 40, -1));
 
+        carroBCounterLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        carroBCounterLabel.setForeground(new java.awt.Color(240, 240, 240));
         carroBCounterLabel.setText("0");
-        jPanel2.add(carroBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 20, -1));
+        jPanel2.add(carroBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 40, -1));
 
+        motorBCounterLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        motorBCounterLabel.setForeground(new java.awt.Color(240, 240, 240));
         motorBCounterLabel.setText("0");
-        jPanel2.add(motorBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 20, -1));
+        jPanel2.add(motorBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 40, -1));
 
+        ruedasBCounterLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        ruedasBCounterLabel.setForeground(new java.awt.Color(240, 240, 240));
         ruedasBCounterLabel.setText("0");
-        jPanel2.add(ruedasBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 20, -1));
+        jPanel2.add(ruedasBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 40, -1));
 
+        jLabel32.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel32.setText("Chasis:");
-        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 60, -1));
+        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 80, -1));
 
+        jLabel33.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel33.setText("Max:");
-        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 40, -1));
+        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 60, -1));
 
+        jLabel34.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(240, 240, 240));
         jLabel34.setText("Max:");
-        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 40, -1));
+        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 60, -1));
 
+        jLabel35.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(240, 240, 240));
         jLabel35.setText("Max:");
-        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 40, -1));
+        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 60, -1));
 
+        jLabel36.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(240, 240, 240));
         jLabel36.setText("Max:");
-        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 40, -1));
+        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 60, -1));
 
+        carroMCounterLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         carroMCounterLabel.setText("0");
-        jPanel2.add(carroMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 20, -1));
+        jPanel2.add(carroMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 40, -1));
 
+        jLabel38.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(240, 240, 240));
         jLabel38.setText("25");
-        jPanel2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 20, -1));
+        jPanel2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 40, -1));
 
+        jLabel39.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(240, 240, 240));
         jLabel39.setText("20");
-        jPanel2.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 20, -1));
+        jPanel2.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 40, -1));
 
+        jLabel40.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(240, 240, 240));
         jLabel40.setText("55");
-        jPanel2.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 20, -1));
+        jPanel2.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 40, -1));
 
+        dayCount.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
         dayCount.setText("0");
-        jPanel2.add(dayCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 20, -1));
+        jPanel2.add(dayCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 60, -1));
 
+        MaUtility.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         MaUtility.setText("0");
-        jPanel2.add(MaUtility, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, 80, -1));
+        jPanel2.add(MaUtility, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 310, 90, -1));
 
+        jLabel44.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel44.setText("Utilidad total:");
-        jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, -1, -1));
+        jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 310, 110, -1));
 
+        jLabel45.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(240, 240, 240));
         jLabel45.setText("10");
-        jPanel2.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 20, -1));
+        jPanel2.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 40, -1));
 
+        MaTimeUntilDeadline.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         MaTimeUntilDeadline.setText("0");
-        jPanel2.add(MaTimeUntilDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 20, -1));
+        jPanel2.add(MaTimeUntilDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 50, -1));
 
+        jLabel47.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel47.setText("Vehículo con accesorios:");
-        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
+        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(449, 370, 170, -1));
 
+        specialVehicleBCounterLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        specialVehicleBCounterLabel.setForeground(new java.awt.Color(240, 240, 240));
         specialVehicleBCounterLabel.setText("0");
-        jPanel2.add(specialVehicleBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 20, -1));
+        jPanel2.add(specialVehicleBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 40, -1));
 
+        jLabel49.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel49.setText("Días para la entrega:");
-        jPanel2.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, -1));
+        jPanel2.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 390, 150, -1));
 
+        jLabel50.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel50.setText("Dinero descontado: ");
-        jPanel2.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, -1, -1));
+        jPanel2.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 460, 150, -1));
 
+        directorStateMLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         directorStateMLabel.setText("Algo");
-        jPanel2.add(directorStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 140, -1));
+        jPanel2.add(directorStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 170, -1));
 
+        managerStateMLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         managerStateMLabel.setText("Algo");
-        jPanel2.add(managerStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 100, -1));
+        jPanel2.add(managerStateMLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, 130, -1));
 
+        jLabel53.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel53.setText("Gerente de operaciones:");
-        jPanel2.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, -1, -1));
+        jPanel2.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 420, 170, -1));
 
+        jLabel54.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel54.setText("Faltas:");
-        jPanel2.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, -1, -1));
+        jPanel2.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, 60, -1));
 
+        BuTimeUntilDeadline.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        BuTimeUntilDeadline.setForeground(new java.awt.Color(240, 240, 240));
         BuTimeUntilDeadline.setText("0");
-        jPanel2.add(BuTimeUntilDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 20, -1));
+        jPanel2.add(BuTimeUntilDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 40, -1));
 
+        MaFaltas.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         MaFaltas.setText("0");
-        jPanel2.add(MaFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 90, -1));
+        jPanel2.add(MaFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 120, -1));
 
+        jLabel57.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel57.setText("Vehículo estándar:");
-        jPanel2.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
+        jPanel2.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 350, 140, -1));
 
+        jLabel58.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(240, 240, 240));
         jLabel58.setText("35");
-        jPanel2.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 20, -1));
+        jPanel2.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 40, -1));
 
+        jLabel59.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel59.setText("Ganancia en Bruto:");
-        jPanel2.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, -1, -1));
+        jPanel2.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 250, 140, -1));
 
+        MaWinnings.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         MaWinnings.setText("0");
-        jPanel2.add(MaWinnings, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 80, -1));
+        jPanel2.add(MaWinnings, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 250, 90, -1));
 
+        jLabel61.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel61.setText("Costro operativo:");
-        jPanel2.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, -1, -1));
+        jPanel2.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 280, 130, -1));
 
+        MaCosts.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         MaCosts.setText("0");
-        jPanel2.add(MaCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 80, -1));
+        jPanel2.add(MaCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 90, -1));
 
+        jLabel63.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(240, 240, 240));
         jLabel63.setText("Almacén");
-        jPanel2.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        jPanel2.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 200, 70, -1));
 
+        jLabel64.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(240, 240, 240));
         jLabel64.setText("Chasis:");
-        jPanel2.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 80, -1));
+        jPanel2.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 100, -1));
 
+        chasisBCounterLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        chasisBCounterLabel.setForeground(new java.awt.Color(240, 240, 240));
         chasisBCounterLabel.setText("0");
-        jPanel2.add(chasisBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 20, -1));
+        jPanel2.add(chasisBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 40, -1));
 
+        jLabel66.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(240, 240, 240));
         jLabel66.setText("Carrocería:");
-        jPanel2.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 80, -1));
+        jPanel2.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 100, -1));
 
+        jLabel67.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(240, 240, 240));
         jLabel67.setText("Motor:");
-        jPanel2.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 80, -1));
+        jPanel2.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 100, -1));
 
+        jLabel68.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(240, 240, 240));
         jLabel68.setText("Ruedas:");
-        jPanel2.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 80, -1));
+        jPanel2.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 100, -1));
 
+        jLabel70.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(240, 240, 240));
         jLabel70.setText("Accesorios:");
-        jPanel2.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 80, -1));
+        jPanel2.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 100, -1));
 
+        jLabel69.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel69.setText("10");
-        jPanel2.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 20, -1));
+        jPanel2.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 40, -1));
 
+        accesMCounterLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         accesMCounterLabel.setText("0");
-        jPanel2.add(accesMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 20, -1));
+        jPanel2.add(accesMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 40, -1));
 
+        motorMCounterLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         motorMCounterLabel.setText("0");
-        jPanel2.add(motorMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 20, -1));
+        jPanel2.add(motorMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 40, -1));
 
+        ruedasMCounterLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         ruedasMCounterLabel.setText("0");
-        jPanel2.add(ruedasMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 20, -1));
+        jPanel2.add(ruedasMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 40, -1));
 
+        jLabel74.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(240, 240, 240));
         jLabel74.setText("Max:");
-        jPanel2.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 40, -1));
+        jPanel2.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 60, -1));
 
+        jLabel75.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel75.setText("Max:");
-        jPanel2.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, 40, -1));
+        jPanel2.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 230, 60, -1));
 
+        jLabel76.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel76.setText("Max:");
-        jPanel2.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, 40, -1));
+        jPanel2.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, 60, -1));
 
+        jLabel77.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel77.setText("Max:");
-        jPanel2.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 40, -1));
+        jPanel2.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 60, -1));
 
+        jLabel78.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel78.setText("Max:");
-        jPanel2.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 40, -1));
+        jPanel2.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 60, -1));
 
+        chasisMCounterLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         chasisMCounterLabel.setText("0");
-        jPanel2.add(chasisMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 20, -1));
+        jPanel2.add(chasisMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 40, -1));
 
+        jLabel80.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel80.setText("25");
-        jPanel2.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 20, -1));
+        jPanel2.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 40, -1));
 
+        jLabel81.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel81.setText("20");
-        jPanel2.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 20, -1));
+        jPanel2.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 40, -1));
 
+        jLabel82.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel82.setText("55");
-        jPanel2.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 20, -1));
+        jPanel2.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 40, -1));
 
+        jLabel83.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel83.setText("35");
-        jPanel2.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 20, -1));
+        jPanel2.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 40, -1));
 
+        jLabel84.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(240, 240, 240));
         jLabel84.setText("Vehículos estándar:");
-        jPanel2.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
+        jPanel2.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 140, -1));
 
+        jLabel85.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(240, 240, 240));
         jLabel85.setText("Vehículos con accesorios:");
-        jPanel2.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        jPanel2.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 370, 180, -1));
 
+        jLabel86.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(240, 240, 240));
         jLabel86.setText("Días para la entrega:");
-        jPanel2.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+        jPanel2.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 390, 150, -1));
 
+        standardVehicleBCounterLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        standardVehicleBCounterLabel.setForeground(new java.awt.Color(240, 240, 240));
         standardVehicleBCounterLabel.setText("0");
-        jPanel2.add(standardVehicleBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 20, -1));
+        jPanel2.add(standardVehicleBCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 40, -1));
 
+        standardVehicleMCounterLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         standardVehicleMCounterLabel.setText("0");
-        jPanel2.add(standardVehicleMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 20, -1));
+        jPanel2.add(standardVehicleMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, 50, -1));
 
+        specialVehicleMCounterLabel.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         specialVehicleMCounterLabel.setText("0");
-        jPanel2.add(specialVehicleMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 20, -1));
+        jPanel2.add(specialVehicleMCounterLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, 50, -1));
 
+        jLabel90.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(240, 240, 240));
         jLabel90.setText("Gerente de operaciones:");
-        jPanel2.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+        jPanel2.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 420, 170, -1));
 
+        jLabel91.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(240, 240, 240));
         jLabel91.setText("Faltas:");
-        jPanel2.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+        jPanel2.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 440, 60, -1));
 
+        jLabel92.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(240, 240, 240));
         jLabel92.setText("Dinero descontado: ");
-        jPanel2.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+        jPanel2.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 460, 140, -1));
 
+        jLabel93.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(240, 240, 240));
         jLabel93.setText("Director de la planta:");
-        jPanel2.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+        jPanel2.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 480, 150, -1));
 
+        managerStateBLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        managerStateBLabel.setForeground(new java.awt.Color(240, 240, 240));
         managerStateBLabel.setText("Algo");
-        jPanel2.add(managerStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 130, -1));
+        jPanel2.add(managerStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 150, -1));
 
+        BuFaltas.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        BuFaltas.setForeground(new java.awt.Color(240, 240, 240));
         BuFaltas.setText("0");
-        jPanel2.add(BuFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 70, -1));
+        jPanel2.add(BuFaltas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 90, -1));
 
+        BuPenalty.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        BuPenalty.setForeground(new java.awt.Color(240, 240, 240));
         BuPenalty.setText("0");
-        jPanel2.add(BuPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 70, -1));
+        jPanel2.add(BuPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 90, -1));
 
+        directorStateBLabel.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        directorStateBLabel.setForeground(new java.awt.Color(240, 240, 240));
         directorStateBLabel.setText("Algo");
-        jPanel2.add(directorStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 140, -1));
+        jPanel2.add(directorStateBLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 160, -1));
 
+        jLabel98.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel98.setForeground(new java.awt.Color(240, 240, 240));
         jLabel98.setText("Ganancia en Bruto:");
-        jPanel2.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
+        jPanel2.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 250, 140, -1));
 
+        BuWinnings.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        BuWinnings.setForeground(new java.awt.Color(240, 240, 240));
         BuWinnings.setText("0");
-        jPanel2.add(BuWinnings, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 90, -1));
+        jPanel2.add(BuWinnings, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 100, -1));
 
+        jLabel100.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel100.setForeground(new java.awt.Color(240, 240, 240));
         jLabel100.setText("Costro operativo:");
-        jPanel2.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
+        jPanel2.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 280, 130, -1));
 
+        BuCosts.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        BuCosts.setForeground(new java.awt.Color(240, 240, 240));
         BuCosts.setText("0");
-        jPanel2.add(BuCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 90, -1));
+        jPanel2.add(BuCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 100, -1));
 
+        jLabel102.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel102.setForeground(new java.awt.Color(240, 240, 240));
         jLabel102.setText("Utilidad total:");
-        jPanel2.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, -1));
+        jPanel2.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 310, 110, -1));
 
+        BuUtility.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        BuUtility.setForeground(new java.awt.Color(240, 240, 240));
         BuUtility.setText("0");
-        jPanel2.add(BuUtility, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 90, -1));
+        jPanel2.add(BuUtility, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 100, -1));
 
         Stop2.setText("Parar");
         Stop2.addActionListener(new java.awt.event.ActionListener() {
@@ -1065,20 +1248,27 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel2.add(Play1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
 
-        jLabel106.setText("Bugatti");
-        jPanel2.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
-
-        jLabel107.setText("Maserati");
-        jPanel2.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
-
+        jLabel46.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel46.setText("Director de la planta:");
-        jPanel2.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, -1, -1));
+        jPanel2.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 480, 150, -1));
 
+        MaPenalty.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         MaPenalty.setText("0");
-        jPanel2.add(MaPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, 90, -1));
+        jPanel2.add(MaPenalty, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, 120, -1));
 
+        jLabel30.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel30.setText("Motor:");
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 80, -1));
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 100, -1));
+
+        jPanel9.setBackground(new java.awt.Color(211, 60, 60));
+
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BugattiLogo.png"))); // NOI18N
+        jPanel9.add(jLabel42);
+
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 440, 600));
+
+        jPanel10.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, -10, 450, 600));
 
         jTabbedPane1.addTab("Simulación", jPanel2);
 
@@ -1112,6 +1302,12 @@ public class Menu extends javax.swing.JFrame {
         jLabel109.setText("Maserati");
         jPanel3.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 720, 320));
+
+        jPanel11.setBackground(new java.awt.Color(211, 60, 60));
+        jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 440, 600));
+
+        jPanel12.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, -10, 450, 600));
 
         jTabbedPane1.addTab("    Gráficos   ", jPanel3);
 
@@ -1174,7 +1370,7 @@ public class Menu extends javax.swing.JFrame {
     private void SMotorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SMotorBActionPerformed
         if(func.checkWorkers(chasisB, carroB, motorB, ruedasB, acceB, maxB, ensamB)) {
             motorB += 1;
-            NMotorBugatti.setText(Integer.toString(carroB));
+            NMotorBugatti.setText(Integer.toString(motorB));
         }
     }//GEN-LAST:event_SMotorBActionPerformed
 
@@ -1474,14 +1670,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JSpinner dayDurationSpinner;
     private javax.swing.JLabel directorStateBLabel;
     private javax.swing.JLabel directorStateMLabel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel106;
-    private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
@@ -1504,17 +1697,19 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
@@ -1527,7 +1722,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
@@ -1557,9 +1751,15 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel managerStateBLabel;
     private javax.swing.JLabel managerStateMLabel;
