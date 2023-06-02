@@ -1310,6 +1310,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
+        seriesBu.clear();
+        seriesMa.clear();
         
         Global.play = true;
         dayDurationInMs = (int) dayDurationSpinner.getValue();

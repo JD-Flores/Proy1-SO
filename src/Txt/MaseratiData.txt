@@ -1,8 +1,8 @@
 Maserati:
-Creadores de chasis: 1
-Creadores de carroceria: 1
-Creadores de motores: 1
+Creadores de chasis: 5
+Creadores de carroceria: 5
+Creadores de motores: 2
 Creadores de ruedas: 1
 Creadores de accesorios: 1
-Ensambladores: 1
-Deadline: 46
+Ensambladores: 3
+Deadline: 20
