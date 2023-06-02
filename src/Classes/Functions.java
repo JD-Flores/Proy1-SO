@@ -4,6 +4,7 @@ package Classes;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import javax.swing.JOptionPane;
 
 public class Functions {
@@ -86,5 +87,66 @@ public class Functions {
         contenido_txt = contenido_txt.split(" ")[1];
         return Integer.parseInt(contenido_txt);
         
+    }
+    
+    public void GuardarDatos(String BuChasis, String BuCarro, String BuMotor, String BuRuedas, String BuAcce, String BuEnsam, String BuDeadline, String MaChasis, String MaCarro, String MaMotor, String MaRuedas, String MaAcce, String MaEnsam, String MaDeadline, String dayDuration){
+        String contenido_txt = "";
+        contenido_txt = "dayDuration: "+dayDuration;
+        File file = new File("Src\\Txt\\dayDuration.txt");
+        try {
+            if (!file.exists()){
+                file.createNewFile();
+            } else {
+                FileWriter fw = new FileWriter(file);
+                fw.write(contenido_txt);
+                fw.close();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        contenido_txt = "Bugatti:\n" +
+                        "Creadores de chasis: " + BuChasis + "\n" +
+                        "Creadores de carroceria: " + BuCarro + "\n" +
+                        "Creadores de motores: " + BuMotor + "\n" +
+                        "Creadores de ruedas: " + BuRuedas + "\n" +
+                        "Creadores de accesorios: " + BuAcce + "\n" +
+                        "Ensambladores: " + BuEnsam + "\n" +
+                        "Deadline: " + BuDeadline;
+        file = new File("Src\\Txt\\BugattiData.txt");
+        try {
+            if (!file.exists()){
+                file.createNewFile();
+            } else {
+                FileWriter fw = new FileWriter(file);
+                fw.write(contenido_txt);
+                fw.close();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        
+        
+        contenido_txt = "Maserati:\n" +
+                        "Creadores de chasis: " + MaChasis + "\n" +
+                        "Creadores de carroceria: " + MaCarro + "\n" +
+                        "Creadores de motores: " + MaMotor + "\n" +
+                        "Creadores de ruedas: " + MaRuedas + "\n" +
+                        "Creadores de accesorios: " + MaAcce + "\n" +
+                        "Ensambladores: " + MaEnsam + "\n" +
+                        "Deadline: " + MaDeadline;
+        file = new File("Src\\Txt\\MaseratiData.txt");
+        try {
+            if (!file.exists()){
+                file.createNewFile();
+            } else {
+                FileWriter fw = new FileWriter(file);
+                fw.write(contenido_txt);
+                fw.close();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 }

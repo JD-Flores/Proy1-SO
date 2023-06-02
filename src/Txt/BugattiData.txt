@@ -1,8 +1,8 @@
 Bugatti:
-Creadores de chasis: 2
+Creadores de chasis: 3
 Creadores de carroceria: 2
 Creadores de motores: 2
-Creadores de ruedas: 2
-Creadores de accesorios: 2
+Creadores de ruedas: 3
+Creadores de accesorios: 3
 Ensambladores: 2
-Deadline: 20
+Deadline: 15
