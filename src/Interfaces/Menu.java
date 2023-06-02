@@ -20,7 +20,10 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.ui.RefineryUtilities;
+import org.jfree.ui.ApplicationFrame;
 
 
 /**
@@ -72,6 +75,16 @@ public class Menu extends javax.swing.JFrame {
     
     VehiclePlant BuVehiclePlant;
     VehiclePlant MaVehiclePlant;
+    
+    int lastDayCount;
+    int utilidad;
+    
+    private XYSeries seriesBu;
+    private XYSeries seriesMa;
+    
+    XYSeriesCollection dataset = new XYSeriesCollection( );
+    
+    
     
     public void Guardar(){
         func.GuardarDatos(NChasisBugatti.getText(), NCarroBugatti.getText(), NMotorBugatti.getText(), NRuedasBugatti.getText(), NAcceBugatti.getText(), NEnsamB.getText(), Integer.toString((int) BugattiDeadlineSpinner.getValue()), NChasisMaserati.getText(), NCarroMaserati.getText(), NMotorMaserati.getText(), NRuedasMaserati.getText(), NAcceMaserati.getText(), NEnsamM.getText(), Integer.toString((int) MaseratiDeadlineSpinner.getValue()), Integer.toString((int) dayDurationSpinner.getValue()));
@@ -140,6 +153,19 @@ public class Menu extends javax.swing.JFrame {
         
         this.dayDurationSpinner.setValue(dayDurationInMs);
         
+        seriesBu = new XYSeries("Bugatti");
+        seriesMa = new XYSeries("Maserati");
+        
+        dataset.addSeries(seriesBu);
+        dataset.addSeries(seriesMa);
+
+        JFreeChart lineChart = ChartFactory.createXYLineChart("Utilidad con respecto al tiempo", "Tiempo (días)", "Utilidad ($)", dataset);
+
+        ChartPanel chartPanel = new ChartPanel( lineChart );
+        chartPanel.setPreferredSize( new java.awt.Dimension( 560 , 367 ) );
+        jPanel4.removeAll();
+        jPanel4.setLayout(new BorderLayout());
+        jPanel4.add(chartPanel,BorderLayout.NORTH);
 
     }
     
@@ -210,69 +236,18 @@ public class Menu extends javax.swing.JFrame {
        ActionListener taskPerformer = new ActionListener() {
            public void actionPerformed(ActionEvent evt) {
                
-                /*DefaultCategoryDataset datos = new DefaultCategoryDataset();
-                datos.setValue(BuVehiclePlant.costos, "Costos", "Bugatti");
-                datos.setValue(BuVehiclePlant.ganancias, "Ganancias","Bugatti");
-                datos.setValue(BuVehiclePlant.ganancias-BuVehiclePlant.costos, "Utilidad", "Bugatti");
-
-                datos.setValue(MaVehiclePlant.costos, "Costos", "Maserati");
-                datos.setValue(MaVehiclePlant.ganancias, "Ganancias","Maserati");
-                datos.setValue(MaVehiclePlant.ganancias-MaVehiclePlant.costos, "Utilidad", "Maserati");
-
-
-                JFreeChart grafico_barras = ChartFactory.createBarChart3D(
-                    "Comparación de Compañias",
-                    "",
-                    "Dólares",
-                    datos,
-                    PlotOrientation.VERTICAL,
-                    true,
-                    true,
-                    false
-                );
-
-                ChartPanel panel = new ChartPanel(grafico_barras);
-                panel.setMouseWheelEnabled(true);
-                panel.setPreferredSize(new Dimension(400,300));
-
-                jPanel4.removeAll();
-                jPanel4.setLayout(new BorderLayout());
-                jPanel4.add(panel,BorderLayout.NORTH);
-                
-                pack();
-                repaint();*/
-                
-                DefaultCategoryDataset datos = new DefaultCategoryDataset();
-                datos.setValue(BuVehiclePlant.costos, "Bugatti", "Costos");
-                datos.setValue(BuVehiclePlant.ganancias, "Bugatti","Ganancias");
-                datos.setValue(BuVehiclePlant.ganancias-BuVehiclePlant.costos, "Bugatti", "Utlilidad");
-
-                datos.setValue(MaVehiclePlant.costos, "Maserati", "Costos");
-                datos.setValue(MaVehiclePlant.ganancias, "Maserati","Ganancias");
-                datos.setValue(MaVehiclePlant.ganancias-MaVehiclePlant.costos, "Maserati", "Utlilidad");
-
-
-                JFreeChart grafico_barras = ChartFactory.createBarChart3D(
-                    "Comparación de Compañias",
-                    "",
-                    "Dólares",
-                    datos,
-                    PlotOrientation.VERTICAL,
-                    true,
-                    true,
-                    false
-                );
-
-                ChartPanel panel = new ChartPanel(grafico_barras);
-                panel.setMouseWheelEnabled(true);
-                panel.setPreferredSize(new Dimension(400,300));
-
-                jPanel4.removeAll();
-                jPanel4.setLayout(new BorderLayout());
-                jPanel4.add(panel,BorderLayout.NORTH);
-                
-                pack();
-                repaint();
+               if (BuVehiclePlant.dayCount==0){
+                   lastDayCount = 0;
+               }
+               if (BuVehiclePlant.dayCount!=lastDayCount){
+                   double d = BuVehiclePlant.dayCount;
+                    double u1 = BuVehiclePlant.ganancias-BuVehiclePlant.costos;
+                    seriesBu.add(d, u1);
+                    double u2 = MaVehiclePlant.ganancias-MaVehiclePlant.costos;
+                    seriesMa.add(d, u2);
+                    repaint();
+               };
+                            
 
         
            }
@@ -450,6 +425,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         jLabel104 = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
         Stop1 = new javax.swing.JButton();
@@ -461,6 +440,8 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPane1.setForeground(new java.awt.Color(51, 51, 51));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -884,7 +865,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(51, 51, 51));
         jLabel25.setText("Day Count:");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 80, -1));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 100, -1));
 
         jLabel26.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel26.setText("Ruedas:");
@@ -954,7 +935,7 @@ public class Menu extends javax.swing.JFrame {
 
         dayCount.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
         dayCount.setText("0");
-        jPanel2.add(dayCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 60, -1));
+        jPanel2.add(dayCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 60, -1));
 
         MaUtility.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         MaUtility.setText("0");
@@ -1236,7 +1217,7 @@ public class Menu extends javax.swing.JFrame {
                 Stop2ActionPerformed(evt);
             }
         });
-        jPanel2.add(Stop2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 90, -1));
+        jPanel2.add(Stop2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 100, -1));
 
         Play1.setText("Reanudar");
         Play1.addActionListener(new java.awt.event.ActionListener() {
@@ -1244,7 +1225,7 @@ public class Menu extends javax.swing.JFrame {
                 Play1ActionPerformed(evt);
             }
         });
-        jPanel2.add(Play1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
+        jPanel2.add(Play1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 100, -1));
 
         jLabel46.setFont(new java.awt.Font("Eras Bold ITC", 0, 12)); // NOI18N
         jLabel46.setText("Director de la planta:");
@@ -1272,6 +1253,14 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel14.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel3.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 60, 20));
+        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 80, 40));
+
+        jPanel13.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel3.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 60, 20));
+        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 80, 40));
+
         jLabel104.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BugattiLogo.png"))); // NOI18N
         jPanel3.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 120));
 
@@ -1284,7 +1273,7 @@ public class Menu extends javax.swing.JFrame {
                 Stop1ActionPerformed(evt);
             }
         });
-        jPanel3.add(Stop1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 90, -1));
+        jPanel3.add(Stop1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 100, -1));
 
         Play2.setText("Reanudar");
         Play2.addActionListener(new java.awt.event.ActionListener() {
@@ -1292,7 +1281,7 @@ public class Menu extends javax.swing.JFrame {
                 Play2ActionPerformed(evt);
             }
         });
-        jPanel3.add(Play2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
+        jPanel3.add(Play2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 100, -1));
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 720, 320));
 
         jPanel11.setBackground(new java.awt.Color(211, 60, 60));
@@ -1744,11 +1733,15 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel managerStateBLabel;
