@@ -206,7 +206,7 @@ public class Menu extends javax.swing.JFrame {
        ActionListener taskPerformer = new ActionListener() {
            public void actionPerformed(ActionEvent evt) {
                
-                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                /*DefaultCategoryDataset datos = new DefaultCategoryDataset();
                 datos.setValue(BuVehiclePlant.costos, "Costos", "Bugatti");
                 datos.setValue(BuVehiclePlant.ganancias, "Ganancias","Bugatti");
                 datos.setValue(BuVehiclePlant.ganancias-BuVehiclePlant.costos, "Utilidad", "Bugatti");
@@ -236,8 +236,39 @@ public class Menu extends javax.swing.JFrame {
                 jPanel4.add(panel,BorderLayout.NORTH);
                 
                 pack();
-                repaint();
+                repaint();*/
+                
+                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                datos.setValue(BuVehiclePlant.costos, "Bugatti", "Costos");
+                datos.setValue(BuVehiclePlant.ganancias, "Bugatti","Ganancias");
+                datos.setValue(BuVehiclePlant.ganancias-BuVehiclePlant.costos, "Bugatti", "Utlilidad");
 
+                datos.setValue(MaVehiclePlant.costos, "Maserati", "Costos");
+                datos.setValue(MaVehiclePlant.ganancias, "Maserati","Ganancias");
+                datos.setValue(MaVehiclePlant.ganancias-MaVehiclePlant.costos, "Maserati", "Utlilidad");
+
+
+                JFreeChart grafico_barras = ChartFactory.createBarChart3D(
+                    "Comparación de Compañias",
+                    "",
+                    "Dólares",
+                    datos,
+                    PlotOrientation.VERTICAL,
+                    true,
+                    true,
+                    false
+                );
+
+                ChartPanel panel = new ChartPanel(grafico_barras);
+                panel.setMouseWheelEnabled(true);
+                panel.setPreferredSize(new Dimension(400,300));
+
+                jPanel4.removeAll();
+                jPanel4.setLayout(new BorderLayout());
+                jPanel4.add(panel,BorderLayout.NORTH);
+                
+                pack();
+                repaint();
 
         
            }
