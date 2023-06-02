@@ -454,8 +454,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel105 = new javax.swing.JLabel();
         Stop1 = new javax.swing.JButton();
         Play2 = new javax.swing.JButton();
-        jLabel108 = new javax.swing.JLabel();
-        jLabel109 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
@@ -1277,8 +1275,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel104.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BugattiLogo.png"))); // NOI18N
         jPanel3.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 240, 120));
 
-        jLabel105.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MaseratiLogo.png"))); // NOI18N
-        jPanel3.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, 160));
+        jLabel105.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/rsz_1maseratilogo.png"))); // NOI18N
+        jPanel3.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 200, 160));
 
         Stop1.setText("Parar");
         Stop1.addActionListener(new java.awt.event.ActionListener() {
@@ -1295,12 +1293,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         jPanel3.add(Play2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
-
-        jLabel108.setText("Bugatti");
-        jPanel3.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
-
-        jLabel109.setText("Maserati");
-        jPanel3.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 720, 320));
 
         jPanel11.setBackground(new java.awt.Color(211, 60, 60));
@@ -1675,8 +1667,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel108;
-    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
