@@ -321,7 +321,6 @@ public class Menu extends javax.swing.JFrame {
         MaseratiDeadlineSpinner = new javax.swing.JSpinner();
         jLabel29 = new javax.swing.JLabel();
         BugattiDeadlineSpinner = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -766,14 +765,6 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, -1, -1));
         jPanel1.add(BugattiDeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 80, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, -1));
-
         jTabbedPane1.addTab("Configuración", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1126,6 +1117,8 @@ public class Menu extends javax.swing.JFrame {
         startTimer();
         startTimerGraph();
         jTabbedPane1.setSelectedIndex(1);
+        func.GuardarDatos(NChasisBugatti.getText(), NCarroBugatti.getText(), NMotorBugatti.getText(), NRuedasBugatti.getText(), NAcceBugatti.getText(), NEnsamB.getText(), Integer.toString((int) BugattiDeadlineSpinner.getValue()), NChasisMaserati.getText(), NCarroMaserati.getText(), NMotorMaserati.getText(), NRuedasMaserati.getText(), NAcceMaserati.getText(), NEnsamM.getText(), Integer.toString((int) MaseratiDeadlineSpinner.getValue()), Integer.toString((int) dayDurationSpinner.getValue()));
+        
         
     }//GEN-LAST:event_StartActionPerformed
 
@@ -1348,10 +1341,6 @@ public class Menu extends javax.swing.JFrame {
         Global.play = true;
     }//GEN-LAST:event_PlayActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        func.GuardarDatos(NChasisBugatti.getText(), NCarroBugatti.getText(), NMotorBugatti.getText(), NRuedasBugatti.getText(), NAcceBugatti.getText(), NEnsamB.getText(), Integer.toString((int) BugattiDeadlineSpinner.getValue()), NChasisMaserati.getText(), NCarroMaserati.getText(), NMotorMaserati.getText(), NRuedasMaserati.getText(), NAcceMaserati.getText(), NEnsamM.getText(), Integer.toString((int) MaseratiDeadlineSpinner.getValue()), Integer.toString((int) dayDurationSpinner.getValue()));
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1457,7 +1446,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JSpinner dayDurationSpinner;
     private javax.swing.JLabel directorStateBLabel;
     private javax.swing.JLabel directorStateMLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
