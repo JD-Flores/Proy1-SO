@@ -193,6 +193,7 @@ public class Menu extends javax.swing.JFrame {
                 MaTimeUntilDeadline.setText(Integer.toString(MaseratiDeadlineInDays-MaVehiclePlant.dayCount%MaVehiclePlant.deadlineInDays));    
                 
                 dayCount.setText(Integer.toString(BuVehiclePlant.dayCount));
+                dayCount1.setText(Integer.toString(BuVehiclePlant.dayCount));
                 
                 BuFaltas.setText(Integer.toString(BuVehiclePlant.faltasManager));
                 MaFaltas.setText(Integer.toString(MaVehiclePlant.faltasManager));
@@ -425,6 +426,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        dayCount1 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
@@ -1253,6 +1256,15 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        dayCount1.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        dayCount1.setText("0");
+        jPanel3.add(dayCount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 60, -1));
+
+        jLabel43.setFont(new java.awt.Font("Fugaz One", 0, 12)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel43.setText("Day Count:");
+        jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 100, -1));
+
         jPanel14.setBackground(new java.awt.Color(51, 102, 255));
         jPanel3.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 60, 20));
         jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 80, 40));
@@ -1648,6 +1660,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel chasisBCounterLabel;
     private javax.swing.JLabel chasisMCounterLabel;
     private javax.swing.JLabel dayCount;
+    private javax.swing.JLabel dayCount1;
     private javax.swing.JSpinner dayDurationSpinner;
     private javax.swing.JLabel directorStateBLabel;
     private javax.swing.JLabel directorStateMLabel;
@@ -1689,6 +1702,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
